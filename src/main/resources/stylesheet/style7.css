@@ -1,0 +1,265 @@
+.root{
+    -fx-background-color: #3d3d3d;
+}
+
+.label{
+    -fx-text-fill: #c7c7c7;
+}
+
+
+#patientNameTxt, #testNameTxt, #dateTxt {
+    -fx-text-fill: black;
+}
+
+.text-field{
+    -fx-background-color: transparent;
+    -fx-border-color: #a1a1a1;
+    -fx-border-width: 0px 0px 1px 0px;
+    -fx-text-fill: #a1a1a1;
+}
+
+.text-field:focused{
+    -fx-border-color: aqua;
+}
+
+.text-field:hover{
+    -fx-effect: none;
+    -fx-background-color: #403434;
+}
+
+
+.scroll-pane> .viewport{
+    -fx-background-color: #3d3d3d;
+}
+
+
+.combo-box-base {
+    -fx-background-color: transparent;
+    -fx-text-fill: #a1a1a1;
+    -fx-prompt-text-fill: #a1a1a1;
+    -fx-text-base-color: #a1a1a1;
+    -fx-border-color: #a1a1a1;
+    -fx-border-width: 0px 0px 1px 0px;
+    -fx-color-label-visible: false;
+
+}
+
+.combo-box-base .text-field{
+    -fx-border-color: none;
+    -fx-editable:false;
+    -fx-text-fill: #a1a1a1;
+}
+
+.combo-box-base .arrow-button{
+    -fx-background-color: transparent;
+}
+
+.combo-box-base:focused{
+    -fx-border-color: aqua;
+
+}
+
+
+.combo-box-base .list-cell{
+    -fx-background-color: #3d3d3d;
+    -fx-text-fill: #a1a1a1;
+}
+
+.combo-box-base .list-cell:hover{
+    -fx-background-color: #403434;
+}
+
+.combo-box:hover{
+    -fx-background-color: #403434;
+}
+
+
+.button{
+    -fx-border-style: none;
+    -fx-background-color: #464546;
+    -fx-text-fill: whitesmoke;
+}
+
+.button:hover{
+    -fx-background-color: #403434;
+    -fx-text-fill: aqua;
+}
+
+.button:pressed {
+    -fx-border-style: solid;
+    -fx-border-color: #013223;
+    -fx-effect: none;
+    -fx-text-fill: #1bc7c7;
+    -fx-border-radius: 3px;
+}
+
+.date-picker .label{
+    -fx-text-fill: black;
+}
+
+.scroll-pane{
+    -fx-background-color: #323232;
+    -fx-border-color: #3c3c3c;
+    -fx-border-radius: 5px;
+    -fx-vbar-policy: never;
+}
+
+
+.scroll-pane .scroll-bar:vertical {
+}
+
+.table-view{
+    -fx-background-color: transparent;
+    -fx-border-color: #2e2e2e;
+    -fx-border-width: 0 1 1 1;
+}
+
+.table-view .scroll-bar:vertical{
+    -fx-vbar-policy: always;
+
+}
+
+.table-view .scroll-bar:horizontal {
+    -fx-hbar-policy: never;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: linear-gradient(to bottom, #2d2d2d, #3c3c3c);
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: #2e2e2e;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header-background .filler {
+    -fx-background-color: transparent;
+}
+
+.table-view .corner {
+    -fx-background-color: transparent;
+}
+
+
+.table-view .label{
+    -fx-text-fill: #a1a1a1;
+}
+
+.table-view .table-cell {
+    -fx-border-color: transparent;
+    -fx-padding: 2 0 2 10;
+    -fx-text-fill: #a1a1a1;
+}
+
+.table-row-cell:hover{
+    -fx-background-color: #403434;
+}
+
+.table-row-cell:odd{
+    -fx-background-color: #3c3c3c;
+}
+
+.table-row-cell:even{
+    -fx-background-color: #3e3e3e;
+}
+
+.table-view .virtual-flow .scroll-bar:horizontal {
+    -fx-hbar-policy: never;
+}
+
+.table-view .virtual-flow .scroll-bar:vertical,
+.table-view .virtual-flow .scroll-bar:vertical .track,
+.table-view .virtual-flow .scroll-bar:vertical .track-background,
+.table-view .virtual-flow .scroll-bar:horizontal,
+.table-view .virtual-flow .scroll-bar:horizontal .track,
+.table-view .virtual-flow .scroll-bar:horizontal .track-background {
+    -fx-background-color: transparent;
+}
+.text-area{
+    -fx-text-fill: #a1a1a1;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-background-color: inherit;
+}
+
+.text-area .content{
+    -fx-background-color: #3d3d3d;
+    -fx-text-fill: #a1a1a1;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px
+}
+
+
+.scroll-bar:horizontal, .scroll-bar:vertical{
+    -fx-arrows-visible: no;
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:horizontal .track, .scroll-bar:vertical .track{
+    -fx-background-color: #3c3c3c;
+}
+
+.scroll-bar:horizontal .thumb, .scroll-bar:vertical .thumb{
+    -fx-background-color: white;
+    -fx-background-radius: 5px;
+}
+
+.increment-button, .decrement-button{
+    -fx-background-color: #3c3c3c;
+    -fx-border-color: #3c3c3c;
+}
+
+.tab-pane{
+    -fx-padding: 0 -1 -1 -1;
+}
+
+.tab-pane, .tab-header-area, .tab-header-background {
+    -fx-background-color:transparent;
+
+}
+
+.tab-pane .tab:hover{
+    -fx-background-color: #403434;
+}
+
+.tab-pane .tab:selected{
+    -fx-background-color: #2d2d2d;
+
+}
+
+.tab-pane .tab-label{
+    -fx-text-fill: #a1a1a1;
+    -fx-label-padding: 2;
+}
+
+.tab-pane .tab-label:hover{
+    -fx-text-fill: aqua;
+}
+
+.tab-pane .tab {
+    -fx-background-color: #323232;
+}
+
+.tab-pane:focused > .tab-header-area > .headers-region > .tab:selected .focus-indicator {
+    -fx-border-color: transparent;
+}
+
+.jfx-snackbar-content {
+    -fx-background-color: #323232;
+    -fx-padding: 10;
+}
+.jfx-snackbar-toast {
+    -fx-text-fill: WHITE;
+}
+.jfx-snackbar-action {
+    -fx-text-fill: #ff4081;
+}
+
+.jfx-dialog-layout {
+    -fx-background-color: inherit;
+}
+
+.split-pane .split-pane-divider {
+    -fx-background-color: none;
+}

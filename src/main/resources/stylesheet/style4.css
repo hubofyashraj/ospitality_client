@@ -1,0 +1,22 @@
+.button{
+    -fx-border-style: none;
+    -fx-background-color: #474546;
+}
+
+.button:hover{
+    -fx-text-fill: aqua;
+    -fx-background-color: #403434;
+}
+
+.label{
+    -fx-text-fill: black;
+}
+
+.text-field{
+    -fx-background-color: #474546;
+    -fx-text-fill: wheat;
+}
+
+.text-field:hover{
+    -fx-background-color: #403434;
+}
