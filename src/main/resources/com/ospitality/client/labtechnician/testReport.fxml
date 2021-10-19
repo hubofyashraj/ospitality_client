@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@../../../../stylesheet/style7.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ospitality.client.labtechnician.testReportController">
+   <Button fx:id="printReportBTN" mnemonicParsing="false" onAction="#callPrintReport" prefWidth="100.0" text="Print" StackPane.alignment="TOP_RIGHT">
+      <StackPane.margin>
+         <Insets right="20.0" top="20.0" />
+      </StackPane.margin>
+   </Button>
+   <Button fx:id="backBTN" layoutX="541.0" layoutY="364.0" mnemonicParsing="false" onAction="#callBack" prefWidth="100.0" text="Back" StackPane.alignment="TOP_LEFT">
+      <StackPane.margin>
+         <Insets left="20.0" top="20.0" />
+      </StackPane.margin>
+   </Button>
+   <ScrollPane fitToWidth="true" maxHeight="842.0" maxWidth="-Infinity" pannable="true" prefHeight="842.0" prefWidth="615.0">
+      <StackPane.margin>
+         <Insets bottom="50.0" left="20.0" right="20.0" top="60.0" />
+      </StackPane.margin>
+      <StackPane fx:id="printPane" maxHeight="750.0" maxWidth="1.7976931348623157E308" minHeight="750.0" minWidth="-Infinity" prefHeight="100.0" prefWidth="593.0" style="-fx-background-color: white;">
+         <Label fx:id="hospitalNameTxt" style="-fx-text-fill: aqua;" text="Hospital Name" textFill="#43f8f2" StackPane.alignment="TOP_CENTER">
+            <StackPane.margin>
+               <Insets top="200.0" />
+            </StackPane.margin>
+            <font>
+               <Font name="System Bold" size="17.0" />
+            </font>
+         </Label>
+         <Label layoutX="187.0" layoutY="60.0" style="-fx-text-fill: #3f8ff8;" text="LABORATORY TEST REPORT" textFill="#3f8ff8" underline="true" StackPane.alignment="TOP_CENTER">
+            <font>
+               <Font name="System Bold" size="29.0" />
+            </font>
+            <StackPane.margin>
+               <Insets top="150.0" />
+            </StackPane.margin>
+         </Label>
+         <Label prefHeight="44.0" prefWidth="342.0" style="-fx-text-fill: black;" text="Patient Name">
+            <font>
+               <Font name="System Bold" size="13.0" />
+            </font>
+         </Label>
+         <Label layoutX="163.0" layoutY="422.0" prefHeight="44.0" prefWidth="307.0" style="-fx-text-fill: black;" text="Test Name">
+            <font>
+               <Font name="System Bold" size="13.0" />
+            </font>
+            <StackPane.margin>
+               <Insets top="70.0" />
+            </StackPane.margin>
+         </Label>
+         <Label layoutX="174.0" layoutY="457.0" style="-fx-text-fill: black;" text="Test Conducted By" StackPane.alignment="BOTTOM_LEFT">
+            <font>
+               <Font name="System Bold" size="13.0" />
+            </font>
+            <StackPane.margin>
+               <Insets bottom="20.0" left="20.0" />
+            </StackPane.margin>
+         </Label>
+         <Label prefHeight="44.0" prefWidth="236.0" style="-fx-text-fill: black;" text="Date">
+            <StackPane.margin>
+               <Insets top="140.0" />
+            </StackPane.margin>
+            <font>
+               <Font name="System Bold" size="13.0" />
+            </font>
+         </Label>
+         <ImageView fitHeight="228.0" fitWidth="178.0" pickOnBounds="true" preserveRatio="true"
+                    StackPane.alignment="TOP_LEFT">
+            <Image url="@../../../../icons/logo.png"/>
+         </ImageView>
+         <TextField fx:id="patientNameTxt" style="-fx-text-fill: black" alignment="CENTER" editable="false" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" promptText="Patient Name">
+            <StackPane.margin>
+               <Insets left="60.0" />
+            </StackPane.margin>
+         </TextField>
+         <TextField fx:id="dateTxt" style="-fx-text-fill: black" alignment="CENTER" editable="false" layoutX="10.0" layoutY="372.0" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" promptText="Date">
+            <StackPane.margin>
+               <Insets left="60.0" top="140.0" />
+            </StackPane.margin>
+         </TextField>
+         <TextField fx:id="testNameTxt" style="-fx-text-fill: black" alignment="CENTER" editable="false" layoutX="10.0" layoutY="372.0" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" promptText="Test Name">
+            <StackPane.margin>
+               <Insets left="60.0" top="70.0" />
+            </StackPane.margin>
+         </TextField>
+         <TextField fx:id="labTechnicianNameTxt" style="-fx-text-fill: black" alignment="CENTER" editable="false" layoutX="237.0" layoutY="442.0" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" promptText="Test Conductor" StackPane.alignment="BOTTOM_LEFT">
+            <StackPane.margin>
+               <Insets bottom="20.0" left="150.0" />
+            </StackPane.margin>
+         </TextField>
+      </StackPane>
+   </ScrollPane>
+</StackPane>

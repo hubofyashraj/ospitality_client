@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="mainpane" prefHeight="600.0" prefWidth="800.0" stylesheets="@../../../../stylesheet/style7.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ospitality.client.medicalstorekeeper.dashboardController">
+   <StackPane fx:id="navbarStackPane" maxHeight="40.0" prefHeight="40.0" prefWidth="600.0" stylesheets="@../../../../stylesheet/navbar.css" StackPane.alignment="TOP_CENTER">
+      <Button fx:id="dashboardBTN" disable="true" minHeight="25.0" mnemonicParsing="false" onAction="#callDashboard" style="-fx-border-color: #a1a1a1; -fx-border-width: 0 0 1 0;" text="DashBoard" textFill="WHITE" StackPane.alignment="TOP_LEFT">
+         <font>
+            <Font size="10.0" />
+         </font>
+         <StackPane.margin>
+            <Insets left="110.0" />
+         </StackPane.margin>
+      </Button>
+      <Button fx:id="logOutBTN" maxHeight="25.0" maxWidth="25.0" minHeight="25.0" minWidth="40.0" mnemonicParsing="false" onAction="#callLogOut" prefHeight="25.0" prefWidth="25.0" StackPane.alignment="TOP_RIGHT">
+         <graphic>
+            <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+               <Image url="@../../../../icons/logoutDark.png" />
+            </ImageView>
+         </graphic>
+         <font>
+            <Font size="10.0" />
+         </font>
+         <StackPane.margin>
+            <Insets />
+         </StackPane.margin>
+         <tooltip>
+            <Tooltip text="LogOut">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
+      </Button>
+      <Label prefHeight="16.0" prefWidth="99.0" text="OSPITALITY" StackPane.alignment="TOP_LEFT">
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+         <font>
+            <Font size="14.0" />
+         </font>
+         <StackPane.margin>
+            <Insets top="11.0" />
+         </StackPane.margin>
+      </Label>
+      <Button fx:id="settingsBTN" maxHeight="25.0" maxWidth="25.0" minHeight="25.0" minWidth="40.0" mnemonicParsing="false" onAction="#callSettings" prefHeight="25.0" prefWidth="25.0" StackPane.alignment="TOP_RIGHT">
+         <font>
+            <Font size="10.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+               <Image url="@../../../../icons/settingDark.png" />
+            </ImageView>
+         </graphic>
+         <StackPane.margin>
+            <Insets right="40.0" />
+         </StackPane.margin>
+         <tooltip>
+            <Tooltip text="Settings">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
+      </Button>
+   </StackPane>
+   <StackPane>
+      <StackPane.margin>
+         <Insets top="40.0" />
+      </StackPane.margin>
+      <StackPane maxHeight="180.0" prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: #16ff9e;" StackPane.alignment="TOP_CENTER">
+         <StackPane.margin>
+            <Insets left="20.0" right="20.0" top="20.0" />
+         </StackPane.margin>
+         <HBox maxHeight="140.0" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="140.0" prefWidth="760.0" spacing="20.0" style="-fx-background-color: #16ff9e;">
+            <padding>
+               <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+            <StackPane.margin>
+               <Insets top="40.0" />
+            </StackPane.margin>
+            <AnchorPane maxHeight="150.0" maxWidth="150.0" style="-fx-background-color: #16FF9E;">
+               <HBox.margin>
+                  <Insets left="-20.0" top="-20.0" />
+               </HBox.margin>
+               <ImageView fx:id="userImg" fitHeight="100.0" fitWidth="100.0" layoutX="25.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="0.0">
+                  <effect>
+                     <DropShadow height="102.96" radius="46.427499999999995" width="84.75">
+                        <color>
+                           <Color red="0.05882352963089943" green="0.364705890417099" blue="0.21568627655506134" />
+                        </color>
+                     </DropShadow>
+                  </effect>
+                  <Image url="@../../../../icons/user.png" />
+               </ImageView>
+               <Label fx:id="userNameTxt" alignment="CENTER" layoutY="100.0" prefHeight="16.0" prefWidth="156.0" style="-fx-text-fill: black;" text="Name" textAlignment="CENTER" />
+               <Label fx:id="roleTxt" alignment="CENTER" layoutY="120.0" opacity="0.63" prefHeight="16.0" prefWidth="156.0" style="-fx-text-fill: black;" text="Role" textAlignment="CENTER" />
+            </AnchorPane>
+            <StackPane maxHeight="80.0" maxWidth="1.7976931348623157E308" prefHeight="80.0" prefWidth="200.0" style="-fx-background-color: #16ff9e; -fx-background-radius: 50;">
+               <effect>
+                  <DropShadow height="93.12" radius="46.245000000000005" width="93.86">
+                     <color>
+                        <Color red="0.05882352963089943" green="0.364705890417099" blue="0.21568627655506134" />
+                     </color>
+                  </DropShadow>
+               </effect>
+               <HBox.margin>
+                  <Insets top="-20.0" />
+               </HBox.margin>
+               <Label alignment="CENTER" maxWidth="110.0" minWidth="110.0" style="-fx-text-fill: black;" text="DESIGNATION" textAlignment="CENTER" textOverrun="CLIP" underline="true" StackPane.alignment="TOP_CENTER">
+                  <effect>
+                     <DropShadow />
+                  </effect>
+                  <StackPane.margin>
+                     <Insets top="15.0" />
+                  </StackPane.margin>
+               </Label>
+               <Label fx:id="designationTxt" alignment="CENTER" style="-fx-text-fill: black;" text="l" textAlignment="CENTER" wrapText="true">
+                  <StackPane.margin>
+                     <Insets top="20.0" />
+                  </StackPane.margin></Label>
+               <padding>
+                  <Insets left="10.0" right="10.0" />
+               </padding>
+            </StackPane>
+            <StackPane maxHeight="80.0" maxWidth="1.7976931348623157E308" prefHeight="80.0" prefWidth="200.0" style="-fx-background-color: #16ff9e; -fx-background-radius: 50;">
+               <effect>
+                  <DropShadow height="93.12" radius="46.245000000000005" width="93.86">
+                     <color>
+                        <Color red="0.05882352963089943" green="0.364705890417099" blue="0.21568627655506134" />
+                     </color>
+                  </DropShadow>
+               </effect>
+               <HBox.margin>
+                  <Insets top="-20.0" />
+               </HBox.margin>
+               <Label alignment="CENTER" minWidth="110.0" style="-fx-text-fill: black;" text="EMAIL" textAlignment="CENTER" underline="true" StackPane.alignment="TOP_CENTER">
+                  <effect>
+                     <DropShadow />
+                  </effect>
+                  <StackPane.margin>
+                     <Insets top="15.0" />
+                  </StackPane.margin>
+               </Label>
+               <Label fx:id="emailTxt" alignment="CENTER" style="-fx-text-fill: black;" text="l" textAlignment="CENTER" wrapText="true">
+                  <StackPane.margin>
+                     <Insets top="20.0" />
+                  </StackPane.margin></Label>
+               <padding>
+                  <Insets left="10.0" right="10.0" />
+               </padding>
+            </StackPane>
+            <StackPane maxHeight="80.0" maxWidth="1.7976931348623157E308" prefHeight="80.0" prefWidth="200.0" style="-fx-background-color: #16ff9e; -fx-background-radius: 50;">
+               <effect>
+                  <DropShadow height="93.12" radius="46.245000000000005" width="93.86">
+                     <color>
+                        <Color red="0.05882352963089943" green="0.364705890417099" blue="0.21568627655506134" />
+                     </color>
+                  </DropShadow>
+               </effect>
+               <HBox.margin>
+                  <Insets top="-20.0" />
+               </HBox.margin>
+               <Label alignment="CENTER" minWidth="110.0" style="-fx-text-fill: black;" text="CONTACT NO" textAlignment="CENTER" underline="true" StackPane.alignment="TOP_CENTER">
+                  <effect>
+                     <DropShadow />
+                  </effect>
+                  <StackPane.margin>
+                     <Insets top="15.0" />
+                  </StackPane.margin>
+               </Label>
+               <Label fx:id="phnoTxt" alignment="CENTER" style="-fx-text-fill: black;" text="l" textAlignment="CENTER" wrapText="true">
+                  <StackPane.margin>
+                     <Insets top="20.0" />
+                  </StackPane.margin></Label>
+               <padding>
+                  <Insets left="10.0" right="10.0" />
+               </padding>
+            </StackPane>
+            <StackPane maxHeight="80.0" maxWidth="1.7976931348623157E308" prefHeight="80.0" prefWidth="200.0" style="-fx-background-color: #16ff9e; -fx-background-radius: 50;">
+               <effect>
+                  <DropShadow height="93.12" radius="46.245000000000005" width="93.86">
+                     <color>
+                        <Color red="0.05882352963089943" green="0.364705890417099" blue="0.21568627655506134" />
+                     </color>
+                  </DropShadow>
+               </effect>
+               <HBox.margin>
+                  <Insets top="-20.0" />
+               </HBox.margin>
+               <Label alignment="CENTER" minWidth="110.0" style="-fx-text-fill: black;" text="JOINING DATE" textAlignment="CENTER" underline="true" StackPane.alignment="TOP_CENTER">
+                  <effect>
+                     <DropShadow />
+                  </effect>
+                  <StackPane.margin>
+                     <Insets top="15.0" />
+                  </StackPane.margin>
+               </Label>
+               <Label fx:id="joiningDateTxt" alignment="CENTER" style="-fx-text-fill: black;" text="l" textAlignment="CENTER" wrapText="true">
+                  <StackPane.margin>
+                     <Insets top="20.0" />
+                  </StackPane.margin></Label>
+               <padding>
+                  <Insets left="10.0" right="10.0" />
+               </padding>
+            </StackPane>
+         </HBox>
+      </StackPane>
+      <SplitPane dividerPositions="0.5752508361204013" prefHeight="160.0" prefWidth="200.0" style="-fx-background-color: #3d3d3d;">
+         <StackPane.margin>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="220.0" />
+         </StackPane.margin>
+         <StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0">
+               <ComboBox fx:id="patientID" editable="true" prefWidth="200.0" promptText="Search Patient" StackPane.alignment="TOP_CENTER">
+                  <StackPane.margin>
+                     <Insets />
+                  </StackPane.margin>
+               </ComboBox>
+               <TableView fx:id="selectedMedicineTableView" editable="true" maxWidth="575.0" minWidth="500.0" prefHeight="200.0" prefWidth="500.0">
+                  <columns>
+                     <TableColumn fx:id="selectedMedicineName" maxWidth="-1.0" minWidth="225.0" prefWidth="-1.0" resizable="false" text="Particulars" />
+                     <TableColumn fx:id="medicNos" maxWidth="-1.0" minWidth="90.0" prefWidth="-1.0" resizable="false" text="Nos(Unit)" />
+                     <TableColumn fx:id="medicRate" maxWidth="-1.0" minWidth="90.0" prefWidth="-1.0" resizable="false" text="Rate (Rs.)" />
+                     <TableColumn fx:id="medicAmount" maxWidth="-1.0" minWidth="90.0" prefWidth="-1.0" resizable="false" text="Amount" />
+                  </columns>
+                  <StackPane.margin>
+                     <Insets top="40.0" />
+                  </StackPane.margin>
+               </TableView>
+            </StackPane>
+         </StackPane>
+         <StackPane maxWidth="250.0" minWidth="250.0">
+            <ComboBox fx:id="medicineName" editable="true" maxWidth="1.7976931348623157E308" minWidth="150.0" promptText="Search Medicine" StackPane.alignment="TOP_CENTER">
+               <StackPane.margin>
+                  <Insets left="10.0" right="10.0" />
+               </StackPane.margin>
+            </ComboBox>
+            <Label prefHeight="17.0" prefWidth="75.0" text="Seller" StackPane.alignment="BOTTOM_LEFT">
+               <StackPane.margin>
+                  <Insets bottom="30.0" left="20.0" />
+               </StackPane.margin>
+            </Label>
+            <Label layoutX="99.0" layoutY="161.0" prefHeight="17.0" prefWidth="75.0" text="Total" StackPane.alignment="BOTTOM_LEFT">
+               <StackPane.margin>
+                  <Insets left="20.0" />
+               </StackPane.margin>
+            </Label>
+            <Label layoutX="99.0" layoutY="161.0" prefHeight="17.0" prefWidth="75.0" text="Patient Name" StackPane.alignment="BOTTOM_LEFT">
+               <StackPane.margin>
+                  <Insets bottom="80.0" left="20.0" />
+               </StackPane.margin>
+            </Label>
+            <Label layoutX="99.0" layoutY="161.0" prefHeight="17.0" prefWidth="75.0" text="Patient Age" StackPane.alignment="BOTTOM_LEFT">
+               <StackPane.margin>
+                  <Insets bottom="60.0" left="20.0" />
+               </StackPane.margin>
+            </Label>
+            <Label fx:id="totalAmountTxt" layoutX="30.0" layoutY="281.0" text="0.0" StackPane.alignment="BOTTOM_LEFT">
+               <StackPane.margin>
+                  <Insets left="120.0" />
+               </StackPane.margin>
+            </Label>
+            <Label fx:id="medicineSellerNameTxt" layoutX="30.0" layoutY="311.0" text="sunil" StackPane.alignment="BOTTOM_LEFT">
+               <StackPane.margin>
+                  <Insets bottom="30.0" left="120.0" />
+               </StackPane.margin>
+            </Label>
+            <Label fx:id="ageTxt" layoutX="30.0" layoutY="231.0" text="21" StackPane.alignment="BOTTOM_LEFT">
+               <StackPane.margin>
+                  <Insets bottom="60.0" left="120.0" />
+               </StackPane.margin>
+            </Label>
+            <Label fx:id="patientNameTxt" layoutX="30.0" layoutY="251.0" style="-fx-text-fill: #d1d1d1;" text="yashraj" StackPane.alignment="BOTTOM_LEFT">
+               <StackPane.margin>
+                  <Insets bottom="80.0" left="120.0" />
+               </StackPane.margin>
+            </Label>
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#callGenerateBill" text="Generate Bill" StackPane.alignment="TOP_LEFT">
+               <StackPane.margin>
+                  <Insets left="10.0" right="10.0" top="50.0" />
+               </StackPane.margin>
+            </Button>
+            <Button layoutX="20.0" layoutY="60.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#initialize" text="CLEAR" StackPane.alignment="TOP_LEFT">
+               <StackPane.margin>
+                  <Insets left="10.0" right="10.0" top="100.0" />
+               </StackPane.margin>
+            </Button>
+         </StackPane>
+      </SplitPane>
+   </StackPane>
+   <StackPane.margin>
+      <Insets top="40.0" />
+   </StackPane.margin>
+</StackPane>

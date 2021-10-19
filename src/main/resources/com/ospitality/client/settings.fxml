@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<StackPane fx:id="mainpane" prefHeight="600.0" prefWidth="800.0" stylesheets="@../../../stylesheet/style7.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ospitality.client.settingsController">
+    <StackPane fx:id="navbarStackPane" maxHeight="40.0" prefHeight="40.0" prefWidth="600.0" stylesheets="@../../../stylesheet/navbar.css" StackPane.alignment="TOP_CENTER">
+        <Button fx:id="dashboardBTN" minHeight="25.0" mnemonicParsing="false" onAction="#callDashboard" prefHeight="25.0" prefWidth="81.0" text="DashBoard" StackPane.alignment="TOP_LEFT">
+            <font>
+                <Font size="10.0" />
+            </font>
+            <StackPane.margin>
+                <Insets left="110.0" />
+            </StackPane.margin>
+        </Button>
+        <Button fx:id="logOutBTN" maxHeight="25.0" maxWidth="25.0" minHeight="25.0" minWidth="40.0" mnemonicParsing="false" onAction="#callLogOut" prefHeight="25.0" prefWidth="25.0" StackPane.alignment="TOP_RIGHT">
+            <graphic>
+                <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@../../../icons/logoutDark.png" />
+                </ImageView>
+            </graphic>
+            <font>
+                <Font size="10.0" />
+            </font>
+            <StackPane.margin>
+                <Insets />
+            </StackPane.margin>
+            <tooltip>
+                <Tooltip text="LogOut">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Tooltip>
+            </tooltip>
+        </Button>
+        <Label prefHeight="16.0" prefWidth="99.0" text="OSPITALITY" StackPane.alignment="TOP_LEFT">
+            <padding>
+                <Insets left="10.0" />
+            </padding>
+            <font>
+                <Font size="14.0" />
+            </font>
+            <StackPane.margin>
+                <Insets top="11.0" />
+            </StackPane.margin>
+        </Label>
+        <Button fx:id="settingsBTN" disable="true" maxHeight="25.0" maxWidth="25.0" minHeight="25.0" minWidth="40.0" mnemonicParsing="false" onAction="#callSettings" prefHeight="25.0" prefWidth="25.0" style="-fx-border-color: #a1a1a1; -fx-border-width: 0 0 1 0;" StackPane.alignment="TOP_RIGHT">
+            <font>
+                <Font size="10.0" />
+            </font>
+            <graphic>
+                <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@../../../icons/settingDark.png" />
+                </ImageView>
+            </graphic>
+            <StackPane.margin>
+                <Insets right="40.0" />
+            </StackPane.margin>
+         <tooltip>
+            <Tooltip text="Settings">
+         <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+</tooltip>
+        </Button>
+    </StackPane>
+    <TabPane fx:id="tabPane" prefHeight="500.0" prefWidth="720.0" stylesheets="@../../../stylesheet/style.css" tabClosingPolicy="UNAVAILABLE" StackPane.alignment="CENTER">
+        <StackPane.margin>
+            <Insets bottom="50.0" left="40.0" right="40.0" top="90.0" />
+        </StackPane.margin>
+        <Tab text="personal details">
+            <StackPane style="-fx-background-color: #3c3c3c;">
+                <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="377.0" prefWidth="760.0" spacing="20.0" style="-fx-background-color: inherit;">
+                    <padding>
+                        <Insets bottom="20.0" top="10.0" />
+                    </padding>
+                    <effect>
+                        <DropShadow />
+                    </effect>
+                    <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="10.0" HBox.hgrow="ALWAYS">
+                        <HBox.margin>
+                            <Insets top="10.0" />
+                        </HBox.margin>
+                        <padding>
+                            <Insets left="20.0" />
+                        </padding>
+                        <StackPane maxHeight="200.0" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: inherit; -fx-background-radius: 50;" VBox.vgrow="ALWAYS">
+                            <effect>
+                                <DropShadow height="71.09" radius="33.9075" spread="0.3" width="66.54">
+                                    <color>
+                                        <Color red="0.16862745583057404" green="0.16862745583057404" blue="0.16862745583057404" />
+                                    </color>
+                                </DropShadow>
+                            </effect>
+                            <Label alignment="CENTER" maxWidth="110.0" minWidth="110.0" style="-fx-text-fill: #fffff0;" text="NAME" textAlignment="CENTER" textFill="#a1a1a1" textOverrun="CLIP" underline="true" StackPane.alignment="TOP_CENTER">
+                                <effect>
+                                    <Glow />
+                                </effect>
+                                <StackPane.margin>
+                                    <Insets top="15.0" />
+                                </StackPane.margin>
+                        <font>
+                           <Font name="Open Sans Regular" size="13.0" />
+                        </font>
+                            </Label>
+                            <Label fx:id="name" style="-fx-text-fill: white;" textAlignment="CENTER" textFill="WHITE" wrapText="true" StackPane.alignment="TOP_CENTER">
+                                <StackPane.margin>
+                                    <Insets top="50.0" />
+                                </StackPane.margin>
+                            </Label>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                        </StackPane>
+                        <StackPane maxHeight="200.0" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: inherit; -fx-background-radius: 50;" VBox.vgrow="ALWAYS">
+                            <effect>
+                                <DropShadow height="71.09" radius="33.9075" spread="0.3" width="66.54">
+                                    <color>
+                                        <Color red="0.16862745583057404" green="0.16862745583057404" blue="0.16862745583057404" />
+                                    </color>
+                                </DropShadow>
+                            </effect>
+                            <Label alignment="CENTER" minWidth="110.0" style="-fx-text-fill: #fffff0;" text="GENDER" textAlignment="CENTER" textFill="WHITE" underline="true" StackPane.alignment="TOP_CENTER">
+                                <effect>
+                                    <Glow />
+                                </effect>
+                                <StackPane.margin>
+                                    <Insets top="15.0" />
+                                </StackPane.margin>
+                                <font>
+                                    <Font name="Open Sans Regular" size="13.0" />
+                                </font>
+                            </Label>
+                            <Label fx:id="gender" style="-fx-text-fill: white;" textAlignment="CENTER" textFill="WHITE" wrapText="true" StackPane.alignment="TOP_CENTER">
+                                <StackPane.margin>
+                                    <Insets top="50.0" />
+                                </StackPane.margin>
+                            </Label>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                        </StackPane>
+                        <StackPane maxHeight="200.0" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: inherit; -fx-background-radius: 50;" VBox.vgrow="ALWAYS">
+                            <effect>
+                                <DropShadow height="71.09" radius="33.9075" spread="0.3" width="66.54">
+                                    <color>
+                                        <Color red="0.16862745583057404" green="0.16862745583057404" blue="0.16862745583057404" />
+                                    </color>
+                                </DropShadow>
+                            </effect>
+                            <Label alignment="CENTER" maxWidth="110.0" minWidth="110.0" style="-fx-text-fill: #fffff0;" text="WORK EMAIL" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" underline="true" StackPane.alignment="TOP_CENTER">
+                                <effect>
+                                    <Glow />
+                                </effect>
+                                <StackPane.margin>
+                                    <Insets top="15.0" />
+                                </StackPane.margin>
+                                <font>
+                                    <Font name="Open Sans Regular" size="13.0" />
+                                </font>
+                            </Label>
+                            <Label fx:id="emailWork" style="-fx-text-fill: white;" textAlignment="CENTER" textFill="WHITE" wrapText="true" StackPane.alignment="TOP_CENTER">
+                                <StackPane.margin>
+                                    <Insets top="50.0" />
+                                </StackPane.margin>
+                            </Label>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                        </StackPane>
+                    </VBox>
+                    <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="10.0" HBox.hgrow="ALWAYS">
+                        <HBox.margin>
+                            <Insets top="10.0" />
+                        </HBox.margin>
+                        <StackPane maxHeight="200.0" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: inherit; -fx-background-radius: 50;" VBox.vgrow="ALWAYS">
+                            <effect>
+                                <DropShadow height="71.09" radius="33.9075" spread="0.3" width="66.54">
+                                    <color>
+                                        <Color red="0.16862745583057404" green="0.16862745583057404" blue="0.16862745583057404" />
+                                    </color>
+                                </DropShadow>
+                            </effect>
+                            <Label alignment="CENTER" minWidth="110.0" style="-fx-text-fill: #fffff0;" text="USER ID" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" underline="true" StackPane.alignment="TOP_CENTER">
+                                <effect>
+                                    <Glow />
+                                </effect>
+                                <StackPane.margin>
+                                    <Insets top="15.0" />
+                                </StackPane.margin>
+                                <font>
+                                    <Font name="Open Sans Regular" size="13.0" />
+                                </font>
+                            </Label>
+                            <Label fx:id="userId" style="-fx-text-fill: white;" textAlignment="CENTER" textFill="WHITE" wrapText="true" StackPane.alignment="TOP_CENTER">
+                                <StackPane.margin>
+                                    <Insets top="50.0" />
+                                </StackPane.margin>
+                            </Label>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                        </StackPane>
+                        <StackPane maxHeight="200.0" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: inherit; -fx-background-radius: 50;" VBox.vgrow="ALWAYS">
+                            <effect>
+                                <DropShadow height="71.09" radius="33.9075" spread="0.3" width="66.54">
+                                    <color>
+                                        <Color red="0.16862745583057404" green="0.16862745583057404" blue="0.16862745583057404" />
+                                    </color>
+                                </DropShadow>
+                            </effect>
+                            <Label alignment="CENTER" minWidth="110.0" style="-fx-text-fill: #fffff0;" text="PHONE NO." textAlignment="CENTER" textFill="WHITE" underline="true" StackPane.alignment="TOP_CENTER">
+                                <effect>
+                                    <Glow />
+                                </effect>
+                                <StackPane.margin>
+                                    <Insets top="15.0" />
+                                </StackPane.margin>
+                                <font>
+                                    <Font name="Open Sans Regular" size="13.0" />
+                                </font>
+                            </Label>
+                            <Label fx:id="phno" style="-fx-text-fill: white;" textAlignment="CENTER" textFill="WHITE" wrapText="true" StackPane.alignment="TOP_CENTER">
+                                <StackPane.margin>
+                                    <Insets top="50.0" />
+                                </StackPane.margin>
+                            </Label>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                        </StackPane>
+                        <StackPane maxHeight="200.0" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: inherit; -fx-background-radius: 50;" VBox.vgrow="ALWAYS">
+                            <effect>
+                                <DropShadow height="71.09" radius="33.9075" spread="0.3" width="66.54">
+                                    <color>
+                                        <Color red="0.16862745583057404" green="0.16862745583057404" blue="0.16862745583057404" />
+                                    </color>
+                                </DropShadow>
+                            </effect>
+                            <Label alignment="CENTER" maxWidth="110.0" minWidth="110.0" style="-fx-text-fill: #fffff0;" text="PERSONAL EMAIL" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" underline="true" StackPane.alignment="TOP_CENTER">
+                                <effect>
+                                    <Glow />
+                                </effect>
+                                <StackPane.margin>
+                                    <Insets top="15.0" />
+                                </StackPane.margin>
+                                <font>
+                                    <Font name="Open Sans Regular" size="13.0" />
+                                </font>
+                            </Label>
+                            <Label fx:id="emailPers" style="-fx-text-fill: white;" textAlignment="CENTER" textFill="WHITE" wrapText="true" StackPane.alignment="TOP_CENTER">
+                                <StackPane.margin>
+                                    <Insets top="50.0" />
+                                </StackPane.margin>
+                            </Label>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                        </StackPane>
+                    </VBox>
+                    <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="10.0" HBox.hgrow="ALWAYS">
+                        <HBox.margin>
+                            <Insets top="10.0" />
+                        </HBox.margin>
+                        <StackPane maxHeight="200.0" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: inherit; -fx-background-radius: 50;" VBox.vgrow="ALWAYS">
+                            <effect>
+                                <DropShadow height="71.09" radius="33.9075" spread="0.3" width="66.54">
+                                    <color>
+                                        <Color red="0.16862745583057404" green="0.16862745583057404" blue="0.16862745583057404" />
+                                    </color>
+                                </DropShadow>
+                            </effect>
+                            <Label alignment="CENTER" maxWidth="110.0" minWidth="110.0" style="-fx-text-fill: #fffff0;" text="JOB/ROLE" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" underline="true" StackPane.alignment="TOP_CENTER">
+                                <effect>
+                                    <Glow />
+                                </effect>
+                                <StackPane.margin>
+                                    <Insets top="15.0" />
+                                </StackPane.margin>
+                                <font>
+                                    <Font name="Open Sans Regular" size="13.0" />
+                                </font>
+                            </Label>
+                            <Label fx:id="role" style="-fx-text-fill: white;" textAlignment="CENTER" textFill="WHITE" wrapText="true" StackPane.alignment="TOP_CENTER">
+                                <StackPane.margin>
+                                    <Insets top="50.0" />
+                                </StackPane.margin>
+                            </Label>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                        </StackPane>
+                        <StackPane maxHeight="200.0" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: inherit; -fx-background-radius: 50;" VBox.vgrow="ALWAYS">
+                            <effect>
+                                <DropShadow height="71.09" radius="33.9075" spread="0.3" width="66.54">
+                                    <color>
+                                        <Color red="0.16862745583057404" green="0.16862745583057404" blue="0.16862745583057404" />
+                                    </color>
+                                </DropShadow>
+                            </effect>
+                            <Label alignment="CENTER" maxWidth="110.0" minWidth="110.0" style="-fx-text-fill: #fffff0;" text="ADDRESS" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" underline="true" StackPane.alignment="TOP_CENTER">
+                                <effect>
+                                    <Glow />
+                                </effect>
+                                <StackPane.margin>
+                                    <Insets top="15.0" />
+                                </StackPane.margin>
+                                <font>
+                                    <Font name="Open Sans Regular" size="13.0" />
+                                </font>
+                            </Label>
+                            <Label fx:id="addr" style="-fx-text-fill: white;" textAlignment="CENTER" textFill="WHITE" wrapText="true" StackPane.alignment="TOP_CENTER">
+                                <StackPane.margin>
+                                    <Insets top="50.0" />
+                                </StackPane.margin>
+                            </Label>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                        </StackPane>
+                        <StackPane maxHeight="200.0" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: inherit; -fx-background-radius: 50;" VBox.vgrow="ALWAYS">
+                            <effect>
+                                <DropShadow height="71.09" radius="33.9075" spread="0.3" width="66.54">
+                                    <color>
+                                        <Color red="0.16862745583057404" green="0.16862745583057404" blue="0.16862745583057404" />
+                                    </color>
+                                </DropShadow>
+                            </effect>
+                            <Label alignment="CENTER" maxWidth="110.0" minWidth="110.0" style="-fx-text-fill: #fffff0;" text="JOINING DATE" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" underline="true" StackPane.alignment="TOP_CENTER">
+                                <effect>
+                                    <Glow />
+                                </effect>
+                                <StackPane.margin>
+                                    <Insets top="15.0" />
+                                </StackPane.margin>
+                                <font>
+                                    <Font name="Open Sans Regular" size="13.0" />
+                                </font>
+                            </Label>
+                            <Label fx:id="joiningDate" style="-fx-text-fill: white;" textAlignment="CENTER" textFill="WHITE" wrapText="true" StackPane.alignment="TOP_CENTER">
+                                <StackPane.margin>
+                                    <Insets top="50.0" />
+                                </StackPane.margin>
+                            </Label>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                        </StackPane>
+                    </VBox>
+                    <StackPane layoutX="940.0" layoutY="30.0" maxHeight="200.0" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: inherit; -fx-background-radius: 50;" HBox.hgrow="ALWAYS">
+                        <HBox.margin>
+                            <Insets right="20.0" top="10.0" />
+                        </HBox.margin>
+                        <effect>
+                            <DropShadow height="71.09" radius="33.9075" spread="0.3" width="66.54">
+                                <color>
+                                    <Color red="0.16862745583057404" green="0.16862745583057404" blue="0.16862745583057404" />
+                                </color>
+                            </DropShadow>
+                        </effect>
+                        <Label alignment="CENTER" maxWidth="110.0" minWidth="110.0" style="-fx-text-fill: #fffff0;" text="DESIGNATION" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" underline="true" StackPane.alignment="TOP_CENTER">
+                            <effect>
+                                <Glow />
+                            </effect>
+                            <StackPane.margin>
+                                <Insets top="15.0" />
+                            </StackPane.margin>
+                            <font>
+                                <Font name="Open Sans Regular" size="13.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="designation" style="-fx-text-fill: white;" textAlignment="CENTER" textFill="WHITE" wrapText="true" StackPane.alignment="TOP_CENTER">
+                            <StackPane.margin>
+                                <Insets top="50.0" />
+                            </StackPane.margin>
+                        </Label>
+                  <padding>
+                     <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                  </padding>
+                    </StackPane>
+                </HBox>
+            </StackPane>
+        </Tab>
+        <Tab text="password management">
+            <StackPane>
+                <Button fx:id="resetBtn" defaultButton="true" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#callTryReset" prefHeight="26.0" prefWidth="250.0" text="RESET" StackPane.alignment="CENTER_RIGHT">
+                    <StackPane.margin>
+                        <Insets right="80.0" top="180.0" />
+                    </StackPane.margin>
+                </Button>
+                <PasswordField fx:id="oldPassword" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="26.0" prefWidth="250.0" promptText="old password" StackPane.alignment="CENTER_RIGHT">
+                    <StackPane.margin>
+                        <Insets bottom="150.0" right="80.0" />
+                    </StackPane.margin>
+                </PasswordField>
+                <PasswordField fx:id="newPassword" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="26.0" prefWidth="250.0" promptText="new password" StackPane.alignment="CENTER_RIGHT">
+                    <StackPane.margin>
+                        <Insets bottom="20.0" right="80.0" />
+                    </StackPane.margin>
+                </PasswordField>
+                <PasswordField fx:id="confNewPass" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="26.0" prefWidth="250.0" promptText="confirm new password" StackPane.alignment="CENTER_RIGHT">
+                    <StackPane.margin>
+                        <Insets right="80.0" top="60.0" />
+                    </StackPane.margin>
+                </PasswordField>
+                <Label fx:id="wrongOldPass" prefHeight="16.0" prefWidth="249.0" style="-fx-text-fill: red;" textFill="RED" StackPane.alignment="CENTER_RIGHT">
+                    <StackPane.margin>
+                        <Insets bottom="100.0" right="80.0" />
+                    </StackPane.margin>
+                </Label>
+                <Label fx:id="newPassErr" prefHeight="16.0" prefWidth="249.0" style="-fx-text-fill: red;" textFill="RED" StackPane.alignment="CENTER_RIGHT">
+                    <StackPane.margin>
+                        <Insets right="80.0" top="110.0" />
+                    </StackPane.margin>
+                </Label>
+                <ImageView fitHeight="350.0" fitWidth="350.0" pickOnBounds="true" StackPane.alignment="CENTER_LEFT">
+                    <StackPane.margin>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                    </StackPane.margin>
+                    <Image url="@../../../icons/securityDark.png" />
+                </ImageView>
+            </StackPane>
+        </Tab>
+    </TabPane>
+</StackPane>
