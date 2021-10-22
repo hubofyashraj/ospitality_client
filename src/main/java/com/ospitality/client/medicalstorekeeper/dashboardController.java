@@ -95,6 +95,16 @@ public class dashboardController {
     }
 
     @FXML
+    public void clearTable(){
+        selectedMedicineTableView.getItems().clear();
+        patientNameTxt.setText(null);
+        ageTxt.setText(null);
+        totalAmountTxt.setText("0.0");
+        patientID.setValue(null);
+        patientID.getItems().clear();
+    }
+
+    @FXML
     public void initialize() throws IOException, URISyntaxException {
         userNameTxt.setText(user.getUserName());
         roleTxt.setText(user.getRole());
@@ -212,6 +222,57 @@ public class dashboardController {
         );
 
 
+        medicineName.setOnAction(
+                actionEvent -> {
+                    if(medicineName.getValue()!=null){
+                        String str = medicineName.getValue();
+                        if(!str.contains("__₹")){
+                            medicineName.setValue(null);
+                            return;
+                        }
+                        JFXDialogLayout content = new JFXDialogLayout();
+                        Text text = new Text("Enter units\n\n(NOTE : USE x/y notation instead of decimal)");
+                        text.setFill(Color.GRAY);
+                        content.setHeading(text);
+
+                        TextField nos  = new TextField();
+                        nos.setPromptText("Nos. in digits");
+                        content.setBody(nos);
+                        Button button = new Button("Click");
+                        content.setActions(button);
+                        JFXDialog dialog = new JFXDialog(mainpane,content, JFXDialog.DialogTransition.CENTER);
+                        button.setOnAction(
+                                event -> {
+                                    if(nos.getText().length()!=0){
+                                        String[] arr = nos.getText().split("/");
+
+                                        double nosD = arr.length==2?round((double)Integer.parseInt(arr[0])/Integer.parseInt(arr[1]))
+                                                :Integer.parseInt(arr[0]);
+
+                                        double am = round(nosD*Double.parseDouble(str.split("__₹")[1]));
+
+                                        Medicine med = new Medicine(str.split("__₹")[0],
+                                                nosD, Double.parseDouble(str.split("__₹")[1]),am);
+                                        data.addAll(med);
+                                        double amount = (Double.parseDouble(totalAmountTxt.getText())+med.getAmount());
+                                        totalAmountTxt.setText(Double.toString(round(amount)));
+                                        dialog.close();
+                                        medicineName.getItems().clear();
+                                        medicineName.setValue(null);
+
+                                    }else {
+                                        text.setFill(Color.RED);
+                                    }
+
+                                }
+                        );
+                        dialog.show();
+                    }
+                }
+        );
+
+
+
         ObservableList<String> medicineListItems = medicineName.getItems();
         medicineName.getEditor().setOnKeyPressed(
                 keyEvent -> {
@@ -227,52 +288,6 @@ public class dashboardController {
                                 String[] arr = str.split("\\./");
                                 medicineListItems.addAll(arr);
                             }
-
-
-                            medicineName.setOnAction(
-                                    actionEvent -> {
-                                        String str = medicineName.getValue();
-                                        if(!str.contains("₹")){
-                                            return;
-                                        }
-                                        JFXDialogLayout content = new JFXDialogLayout();
-                                        Text text = new Text("Enter units\n\n(NOTE : USE x/y notation instead of decimal)");
-                                        text.setFill(Color.GRAY);
-                                        content.setHeading(text);
-
-                                        TextField nos  = new TextField();
-                                        nos.setPromptText("Nos. in digits");
-                                        content.setBody(nos);
-                                        Button button = new Button("Click");
-                                        content.setActions(button);
-                                        JFXDialog dialog = new JFXDialog(mainpane,content, JFXDialog.DialogTransition.CENTER);
-                                        button.setOnAction(
-                                                event -> {
-                                                    if(nos.getText().length()!=0){
-                                                        String[] arr = nos.getText().split("/");
-
-                                                        double nosD = arr.length==2?round((double)Integer.parseInt(arr[0])/Integer.parseInt(arr[1]))
-                                                                :Integer.parseInt(arr[0]);
-
-                                                        double am = round(nosD*Double.parseDouble(str.split("₹")[1]));
-
-                                                        Medicine med = new Medicine(str.split("₹")[0],
-                                                                nosD, Double.parseDouble(str.split("₹")[1]),am);
-                                                        data.addAll(med);
-                                                        double amount = (Double.parseDouble(totalAmountTxt.getText())+med.getAmount());
-                                                        totalAmountTxt.setText(Double.toString(round(amount)));
-                                                        dialog.close();
-                                                    }else {
-                                                        text.setFill(Color.RED);
-                                                    }
-
-                                                }
-                                        );
-                                        dialog.show();
-
-                                    }
-                            );
-
                             medicineName.show();
 
                         }else{
@@ -379,10 +394,10 @@ public class dashboardController {
         Label medicineBill = new Label("MEDICINE BILL");
         Label _1 = new Label("__________________________________________________");
         Label _2 = new Label("__________________________________________________");
-        Label patientName = new Label("Patient Name ");
-        Label patientAge = new Label("Age ");
-        Label medicineSoldBy = new Label("Medicine Sold By : ");
-        Label totalAmount = new Label("Total (Rs)");
+        Label patientName = new Label("Patient Name: "+patientNameTxt.getText());
+        Label patientAge = new Label("Age: "+ageTxt.getText());
+        Label medicineSoldBy = new Label("Medicine Sold By: "+medicineSellerNameTxt.getText());
+        Label totalAmount = new Label("Total (Rs): "+totalAmountTxt.getText());
 
         StackPane.setAlignment(hospitalName,Pos.TOP_CENTER);
         StackPane.setMargin(hospitalName,new Insets(20,0,0,0));
@@ -404,30 +419,18 @@ public class dashboardController {
         StackPane.setAlignment(patientName,Pos.TOP_LEFT);
         StackPane.setMargin(patientName,new Insets(150,0,0,20));
         StackPane.setAlignment(patientAge,Pos.TOP_RIGHT);
-        StackPane.setMargin(patientAge,new Insets(150,150,0,0));
+        StackPane.setMargin(patientAge,new Insets(150,20,0,0));
         StackPane.setAlignment(totalAmount,Pos.BOTTOM_RIGHT);
-        StackPane.setMargin(totalAmount,new Insets(0,100,20,0));
+        StackPane.setMargin(totalAmount,new Insets(0,20,20,0));
         StackPane.setAlignment(medicineSoldBy,Pos.BOTTOM_LEFT);
         StackPane.setMargin(medicineSoldBy,new Insets(0,0,20,20));
 
 
         Label date = new Label(LocalDate.now().toString());
-        Label name = new Label(patientNameTxt.getText());
-        Label age = new Label(ageTxt.getText());
-        Label seller = new Label(medicineSellerNameTxt.getText());
-        Label total = new Label(totalAmountTxt.getText());
 
 
         StackPane.setAlignment(date,Pos.TOP_LEFT);
         StackPane.setMargin(date,new Insets(120,0,0,20));
-        StackPane.setAlignment(name,Pos.TOP_LEFT);
-        StackPane.setMargin(name,new Insets(150,0,0,125));
-        StackPane.setAlignment(age,Pos.TOP_RIGHT);
-        StackPane.setMargin(age,new Insets(150,100,0,0));
-        StackPane.setAlignment(seller,Pos.BOTTOM_LEFT);
-        StackPane.setMargin(seller,new Insets(0,0,20,150));
-        StackPane.setAlignment(total,Pos.BOTTOM_RIGHT);
-        StackPane.setMargin(total,new Insets(0,40,20,0));
 
 
         TableColumn<Medicine,String> particulars = new TableColumn<>("Particulars");
@@ -463,7 +466,7 @@ public class dashboardController {
         StackPane.setAlignment(pane, Pos.BOTTOM_CENTER);
         StackPane.setMargin(pane,new Insets(200,10,50,10));
 
-        bill.getChildren().addAll(hospitalName,medicineBill,date,_1,_2,patientName,name,patientAge,age,pane,medicineSoldBy,seller,totalAmount,total);
+        bill.getChildren().addAll(hospitalName,medicineBill,date,_1,_2,patientName,patientAge,pane,medicineSoldBy,totalAmount);
 
         return bill;
     }

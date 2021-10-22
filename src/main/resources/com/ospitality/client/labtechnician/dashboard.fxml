@@ -78,6 +78,9 @@
             </Tooltip>
          </tooltip>
       </Button>
+      <effect>
+         <DropShadow />
+      </effect>
    </StackPane>
    <StackPane style="-fx-background-color: #323232;">
       <StackPane.margin>
@@ -85,7 +88,7 @@
       </StackPane.margin>
       <StackPane maxHeight="180.0" prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: #323232;" StackPane.alignment="TOP_CENTER">
          <StackPane.margin>
-            <Insets />
+            <Insets top="20.0" />
          </StackPane.margin>
          <HBox maxHeight="140.0" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="140.0" prefWidth="760.0" spacing="20.0">
             <padding>
@@ -208,6 +211,13 @@
                </padding>
             </StackPane>
          </HBox>
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color opacity="0.20151515305042267" />
+               </color>
+            </DropShadow>
+         </effect>
       </StackPane>
       <TabPane fx:id="tabPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #323232; -fx-border-width: 1 0 0 0; -fx-border-color: #555555;" stylesheets="@../../../../stylesheet/style.css" tabClosingPolicy="UNAVAILABLE">
          <tabs>
@@ -231,7 +241,7 @@
                   </StackPane>
                </content>
             </Tab>
-            <Tab text="Last Week">
+            <Tab text="Recent">
                <content>
                   <StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="500.0">
                      <children>
@@ -253,7 +263,7 @@
             </Tab>
          </tabs>
          <StackPane.margin>
-            <Insets top="190.0" />
+            <Insets top="220.0" />
          </StackPane.margin>
       </TabPane>
       <padding>

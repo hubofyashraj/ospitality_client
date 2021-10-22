@@ -1,5 +1,6 @@
 package com.ospitality.client.doctor;
 
+import com.jfoenix.controls.JFXSnackbar;
 import com.ospitality.client.common;
 import com.ospitality.client.user;
 import javafx.fxml.FXML;
@@ -13,10 +14,14 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.effect.BoxBlur;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.TilePane;
 import javafx.stage.FileChooser;
 import javafx.stage.Popup;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -27,6 +32,7 @@ import java.util.Objects;
 
 public class dashboardController {
 
+    public static String patientData="";
     public Label todaysAppointmentsTxt;
     public Label todaysRemainingAppsTxt;
     public ImageView userImg;
@@ -38,6 +44,7 @@ public class dashboardController {
     public Label roleTxt;
     public StackPane navbarStackPane;
     public StackPane mainpane;
+    public TilePane appointmentsPane;
     @FXML
     private Button patientsAndScansBTN;
     @FXML
@@ -118,6 +125,84 @@ public class dashboardController {
         );
 
         common.loadDP(userImg);
+
+        dout.writeUTF("DPSI");
+        dout.writeUTF(user.getDesignation());
+
+        dout.flush();
+
+        boolean c = din.readBoolean();
+
+        if(c){
+            String st = din.readUTF();
+            while(!st.equals("S")){
+                String[] str = st.split("\\./");
+                appointmentsPane.getChildren().add(common.getAPane(str[0],str[1],str[2]));
+                st=din.readUTF();
+            }
+
+            appointmentsPane.getChildren().forEach(
+                    item -> {
+                        AnchorPane pane = (AnchorPane) item;
+                        if(((Label)(pane.getChildren().get(2))).getText().startsWith("Visited")){
+                            pane.setDisable(true);
+                        }
+                        pane.setOnMouseEntered(
+                                mouseEvent -> pane.setStyle("-fx-background-color: #403434;-fx-background-radius: 10px;-fx-border-radius: 10px")
+                        );
+
+                        pane.setOnMouseExited(
+                                mouseEvent -> pane.setStyle("-fx-background-color: #3d3d3d;-fx-background-radius: 10px;-fx-border-radius: 10px")
+                        );
+
+                        pane.setOnMouseClicked(
+                                mouseEvent -> {
+                                    try {
+                                        patientID = ((Label) (pane.getChildren().get(1))).getText();
+                                        callSearch();
+                                    } catch (IOException e) {
+                                        e.printStackTrace();
+                                    }
+                                }
+                        );
+                    }
+            );
+
+        }else{
+            Label label = new Label("No Appointments For Today Yet.");
+            label.wrapTextProperty().setValue(true);
+            appointmentsPane.getChildren().add(label);
+        }
+
+
+
+
+
+
+    }
+
+    String patientID="";
+    static boolean visited=false;
+
+    public void callSearch() throws IOException {
+        DataOutputStream dout = new DataOutputStream(common.getSocket().getOutputStream())/*common.getDout()*/;
+        DataInputStream din = new DataInputStream(common.getSocket().getInputStream())/*common.getDin()*/;
+
+        dout.writeUTF("DSP");
+        dout.writeUTF(patientID+"./"+user.getDesignation());
+
+        if(din.readBoolean()){
+            dashboardController.patientData = din.readUTF();
+            patientController.patID = patientID;
+            Stage stage = (Stage) mainpane.getScene().getWindow();
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("patient.fxml")));
+            Scene sc = stage.getScene();
+            Scene scene  = new Scene(root,sc.getWidth(),sc.getHeight());
+            stage.setScene(scene);
+        }else{
+            JFXSnackbar snackbar = new JFXSnackbar((Pane) mainpane);
+            snackbar.enqueue(new JFXSnackbar.SnackbarEvent(new Label("No Appointment For "+patientID), Duration.millis(1500)));
+        }
     }
 
     
@@ -140,7 +225,7 @@ public class dashboardController {
     @FXML
     void callPatientsAndScans() throws IOException {
         Stage stage = (Stage) patientsAndScansBTN.getScene().getWindow();
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("patientsAndScans.fxml")));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("patientsAndScans.test")));
         Scene sc = stage.getScene();
         Scene scene = new Scene(root,sc.getWidth(),sc.getHeight());
         stage.setScene(scene);

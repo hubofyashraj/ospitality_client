@@ -17,10 +17,12 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import javax.imageio.ImageIO;
+import javax.swing.*;
 import java.awt.*;
 import java.io.*;
 import java.net.Socket;
@@ -134,7 +136,17 @@ public class common {
         button.setLayoutX(389);
         button.setLayoutY(38);
 
-        AnchorPane pane=new AnchorPane(administration,time,button);
+        Button close = new Button("X");
+
+        close.setOnAction(
+                actionEvent -> {
+                    ((Stage)close.getScene().getWindow()).close();
+                }
+        );
+        close.setLayoutY(0);
+        AnchorPane.setRightAnchor(close,0.0);
+
+        AnchorPane pane=new AnchorPane(administration,time,button,close);
         pane.setPrefHeight(100);
         pane.setPrefWidth(450);
         pane.getStylesheets().add(Objects.requireNonNull(common.class.getResource("/stylesheet/style7.css")).toURI().toString());
@@ -165,11 +177,44 @@ public class common {
         return pane;
     }
 
-    public static AnchorPane getAPane(String name, String id){
+    public static AnchorPane getAPane(String name, String id, String visited){
         Label name1 = new Label(name);
         Label id1 = new Label(id);
-        AnchorPane pane = new AnchorPane(name1,id1);
-        m(pane);
+        Label visited1 = new Label(visited.equals("UV")?"Yet to Visit":"Visited");
+
+        visited1.setWrapText(true);
+
+        name1.setStyle("-fx-pref-width: 130; -fx-text-fill: #a1a1a1; ");
+        id1.setStyle("-fx-pref-width: 130; -fx-text-fill: #a1a1a1; ");
+        visited1.setStyle("-fx-pref-width: 130; -fx-text-fill: #a1a1a1; ");
+
+        name1.setAlignment(Pos.CENTER);
+        id1.setAlignment(Pos.CENTER);
+        visited1.setAlignment(Pos.CENTER);
+
+        name1.setTextAlignment(TextAlignment.CENTER);
+        id1.setTextAlignment(TextAlignment.CENTER);
+        visited1.setTextAlignment(TextAlignment.CENTER);
+
+        name1.setLayoutY(15);
+        id1.setLayoutY(30);
+        visited1.setLayoutY(50);
+
+
+        AnchorPane.setLeftAnchor(name1,0.0);
+        AnchorPane.setLeftAnchor(id1,0.0);
+        AnchorPane.setLeftAnchor(visited1,0.0);
+        AnchorPane.setRightAnchor(name1,0.0);
+        AnchorPane.setRightAnchor(id1,0.0);
+        AnchorPane.setRightAnchor(visited1,0.0);
+
+        AnchorPane pane = new AnchorPane(name1,id1,visited1);
+        pane.setMinWidth(140);
+        pane.setMinHeight(70);
+        pane.setBackground(new Background(new BackgroundFill(new Color(0.24,0.24,0.24,1), new CornerRadii(10), EMPTY)));
+        pane.setStyle("-fx-background-color: #3d3d3d");
+        seTeffect(pane);
+        pane.setStyle("-fx-border-radius: 10px");
         return pane;
     }
 
@@ -252,21 +297,6 @@ public class common {
                 }
         );
         return pane;
-    }
-
-    private static void m(AnchorPane pane) {
-        pane.setBackground(new Background(new BackgroundFill(new Color(0.24,0.24,0.24,1), new CornerRadii(10), EMPTY)));
-        pane.setStyle("-fx-background-color: #3d3d3d");
-        seTeffect(pane);
-        pane.setStyle("-fx-border-radius: 10px");
-        pane.setMinWidth(100);
-        pane.setMinHeight(100);
-        pane.setPrefWidth(160);
-        pane.setPrefHeight(160);
-        pane.getChildren().get(0).setLayoutX(55);
-        pane.getChildren().get(0).setLayoutY(120);
-        pane.getChildren().get(1).setLayoutX(55);
-        pane.getChildren().get(1).setLayoutY(140);
     }
 
     public static void seTeffect(AnchorPane pane) {

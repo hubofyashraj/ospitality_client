@@ -60,7 +60,7 @@ public class patientController {
     String pGender = "";
     String pRemark = "";
     int pAge = 0;
-    final String patData = patientsAndScansController.patientData;
+    final String patData = dashboardController.patientData;
 
     final DataOutputStream dout = common.getDout();
 
@@ -91,7 +91,7 @@ public class patientController {
     @FXML
     void callBack() throws IOException {
         Stage stage = (Stage) backBtn.getScene().getWindow();
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("patientsAndScans.fxml")));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("dashboard.fxml")));
         Scene sc = stage.getScene();
         Scene scene = new Scene(root,sc.getWidth(),sc.getHeight());
         stage.setScene(scene);
