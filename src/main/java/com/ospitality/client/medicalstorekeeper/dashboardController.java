@@ -369,7 +369,7 @@ public class dashboardController {
         PrinterJob pj = PrinterJob.createPrinterJob();
         if(pj!=null){
             Printer printer = Printer.getDefaultPrinter();
-            PageLayout pageLayout = printer.createPageLayout(Paper.A4, PageOrientation.PORTRAIT,0,0,0,0);
+            PageLayout pageLayout = printer.createPageLayout(Paper.A4, PageOrientation.PORTRAIT,Printer.MarginType.HARDWARE_MINIMUM);
             JobSettings jobSettings = pj.getJobSettings();
             jobSettings.setPrintQuality(PrintQuality.HIGH);
             jobSettings.setPageLayout(pageLayout);
@@ -451,8 +451,8 @@ public class dashboardController {
         pane.setMaxWidth(575);
         pane.setPrefWidth(575);
         pane.setPrefHeight(500);
-
         pane.setAlignment(Pos.CENTER);
+        medicineTable.setStyle("-fx-vbar-policy: never");
 
         particulars.setMinWidth(240);
         nos.setMinWidth(100);

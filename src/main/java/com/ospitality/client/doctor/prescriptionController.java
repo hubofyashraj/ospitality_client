@@ -232,6 +232,7 @@ public class prescriptionController {
         PrinterJob pj = PrinterJob.createPrinterJob();
         if(pj!=null){
             Printer printer = Printer.getDefaultPrinter();
+            PageLayout pageLayout = printer.createPageLayout(Paper.A4, PageOrientation.PORTRAIT,Printer.MarginType.HARDWARE_MINIMUM);
             PageLayout pageLayout = printer.createPageLayout(Paper.A4, PageOrientation.PORTRAIT,0,0,0,30);
             JobSettings jobSettings = pj.getJobSettings();
             jobSettings.setPrintQuality(PrintQuality.HIGH);
@@ -255,6 +256,9 @@ public class prescriptionController {
         StackPane prescription = new StackPane();
 
         prescription.setStyle("-fx-background-color: whitesmoke");
+        prescription.setPrefWidth(570);
+        prescription.setPrefHeight(800);
+        prescription.setMaxWidth(570);
         prescription.setPrefWidth(600);
         prescription.setPrefHeight(800);
         prescription.setMaxWidth(600);
@@ -341,12 +345,19 @@ public class prescriptionController {
         StackPane.setMargin(tablePane,new Insets(120,0,50,0));
         tablePane.setPrefHeight(430);
         tablePane.setPrefWidth(512);
-
+        tablePane.setPadding(new Insets(0,10,0,10));
         TableView<Medicine> tableView = new TableView<>();
         TableColumn<Medicine,String> medicineName = new TableColumn<>("MEDICINE NAME");
         TableColumn<Medicine,String> medicineAdministration = new TableColumn<>("ADMINISTRATION (times/day)");
         TableColumn<Medicine,String> medicineTime = new TableColumn<>("FOR DAYS");
 
+
+        medicineName.setMinWidth(225);
+        medicineAdministration.setMinWidth(225);
+        medicineTime.setMinWidth(100);
+
+        tableView.getColumns().addAll(medicineName,medicineAdministration,medicineTime);
+        tableView.setStyle("-fx-vbar-policy: never");
         medicineName.setMinWidth(240);
         medicineAdministration.setMinWidth(240);
         medicineTime.setMinWidth(100);

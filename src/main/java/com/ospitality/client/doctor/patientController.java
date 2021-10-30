@@ -17,6 +17,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -122,6 +123,8 @@ public class patientController {
     public void callAssignIt( ) throws IOException {
         dout.writeUTF("DAL");
         dout.writeUTF(patID+"./"+labtestName.getValue());
+        JFXSnackbar snackbar = new JFXSnackbar((Pane) backBtn.getParent());
+        snackbar.enqueue(new JFXSnackbar.SnackbarEvent(new Label("Lab-test Assigned "+labtestName.getValue()), Duration.millis(2000)));
         confermPane.setVisible(false);
     }
 

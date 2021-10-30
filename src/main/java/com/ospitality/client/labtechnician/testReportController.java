@@ -69,7 +69,7 @@ public class testReportController {
         PrinterJob pj = PrinterJob.createPrinterJob();
         if(pj!=null){
             Printer printer = Printer.getDefaultPrinter();
-            PageLayout pageLayout = printer.createPageLayout(Paper.A4, PageOrientation.PORTRAIT,0,0,0,0);
+            PageLayout pageLayout = printer.createPageLayout(Paper.A4, PageOrientation.PORTRAIT,Printer.MarginType.HARDWARE_MINIMUM);
             JobSettings jobSettings = pj.getJobSettings();
             jobSettings.setPrintQuality(PrintQuality.HIGH);
             jobSettings.setPageLayout(pageLayout);
