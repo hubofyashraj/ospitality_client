@@ -336,6 +336,7 @@ public class appointmentController {
         dateField2.setText(date);
         departmentCB.setText(data.substring(12));
         visitedCheckBox.selectedProperty().set(visited);
+        datePicker2.setDisable(visited || notUpcoming);
         deleteBTN.setDisable(visited || notUpcoming);
         saveBTN.setDisable(visited || notUpcoming);
     }

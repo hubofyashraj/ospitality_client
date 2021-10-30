@@ -17,6 +17,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -60,7 +61,7 @@ public class patientController {
     String pGender = "";
     String pRemark = "";
     int pAge = 0;
-    final String patData = patientsAndScansController.patientData;
+    final String patData = dashboardController.patientData;
 
     final DataOutputStream dout = common.getDout();
 
@@ -91,7 +92,7 @@ public class patientController {
     @FXML
     void callBack() throws IOException {
         Stage stage = (Stage) backBtn.getScene().getWindow();
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("patientsAndScans.fxml")));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("dashboard.fxml")));
         Scene sc = stage.getScene();
         Scene scene = new Scene(root,sc.getWidth(),sc.getHeight());
         stage.setScene(scene);
@@ -122,6 +123,8 @@ public class patientController {
     public void callAssignIt( ) throws IOException {
         dout.writeUTF("DAL");
         dout.writeUTF(patID+"./"+labtestName.getValue());
+        JFXSnackbar snackbar = new JFXSnackbar((Pane) backBtn.getParent());
+        snackbar.enqueue(new JFXSnackbar.SnackbarEvent(new Label("Lab-test Assigned "+labtestName.getValue()), Duration.millis(2000)));
         confermPane.setVisible(false);
     }
 
