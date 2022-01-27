@@ -14,7 +14,6 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.effect.DropShadow?>
-<?import javafx.scene.effect.Glow?>
 <?import javafx.scene.effect.Reflection?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -25,7 +24,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<StackPane fx:id="mainpane" prefHeight="600.0" prefWidth="800.0" stylesheets="@../../../../stylesheet/style7.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ospitality.client.receptionist.appointmentController">
+<StackPane fx:id="mainpane" prefHeight="600.0" prefWidth="800.0" stylesheets="@../../../../stylesheet/style7_light.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ospitality.client.receptionist.appointmentController">
     <StackPane fx:id="navbarStackPane" maxHeight="40.0" prefHeight="40.0" prefWidth="600.0" stylesheets="@../../../../stylesheet/navbar.css" StackPane.alignment="TOP_CENTER">
         <Button fx:id="appointmentBTN" disable="true" minHeight="25.0" mnemonicParsing="false" onAction="#callAppointment" prefWidth="80.0" style="-fx-border-color: #a1a1a1; -fx-border-width: 0 0 1 0;" text="Appointment" StackPane.alignment="TOP_LEFT">
             <font>
@@ -95,19 +94,19 @@
 </tooltip>
         </Button>
     </StackPane>
-    <TabPane fx:id="tabPane" prefHeight="200.0" prefWidth="200.0" stylesheets="@../../../../stylesheet/style7.css" tabClosingPolicy="UNAVAILABLE">
+    <TabPane fx:id="tabPane" prefHeight="200.0" prefWidth="200.0" stylesheets="@../../../../stylesheet/style7_light.css" tabClosingPolicy="UNAVAILABLE">
         <StackPane.margin>
             <Insets top="40.0" />
         </StackPane.margin>
         <Tab text="New Appointment">
-            <StackPane fx:id="newAppointmentTab" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="500.0" prefWidth="600.0" stylesheets="@../../../../stylesheet/style7.css">
-                <Label prefHeight="17.0" prefWidth="160.0" style="-fx-text-fill: white;" text="Patient ID" StackPane.alignment="CENTER_RIGHT">
+            <StackPane fx:id="newAppointmentTab" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="500.0" prefWidth="600.0" style="-fx-background-color: #CDC9C9;" stylesheets="@../../../../stylesheet/style7_light.css">
+                <Label prefHeight="17.0" prefWidth="160.0" text="Patient ID" StackPane.alignment="CENTER_RIGHT">
                     <StackPane.margin>
                         <Insets bottom="210.0" right="240.0" />
                     </StackPane.margin>
-                    <effect>
-                        <Glow />
-                    </effect>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
                 </Label>
                 <TextField fx:id="patientIDTxt1" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="100.0" prefHeight="40.0" prefWidth="300.0" promptText="patient id" StackPane.alignment="CENTER_RIGHT">
                     <StackPane.margin>
@@ -134,16 +133,16 @@
                         </FXCollections>
                     </items>
                 </ComboBox>
-                <Label layoutX="60.0" layoutY="102.0" prefHeight="17.0" prefWidth="160.0" style="-fx-text-fill: white;" text="Department" StackPane.alignment="CENTER_RIGHT">
+                <Label layoutX="60.0" layoutY="102.0" prefHeight="17.0" prefWidth="160.0" text="Department" StackPane.alignment="CENTER_RIGHT">
                     <StackPane.margin>
                         <Insets right="240.0" top="110.0" />
                     </StackPane.margin>
                     <padding>
                         <Insets right="25.0" />
                     </padding>
-                    <effect>
-                        <Glow />
-                    </effect>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
                 </Label>
                 <Button fx:id="newPatientBTN" mnemonicParsing="false" onAction="#callNewPatient" prefWidth="100.0" text="New Patient" StackPane.alignment="TOP_RIGHT">
                     <StackPane.margin>
@@ -154,21 +153,24 @@
                     <StackPane.margin>
                         <Insets right="100.0" top="300.0" />
                     </StackPane.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
                 </Button>
-                <Label layoutX="60.0" layoutY="152.0" prefHeight="17.0" prefWidth="160.0" style="-fx-text-fill: white;" text="Date" StackPane.alignment="CENTER_RIGHT">
+                <Label layoutX="60.0" layoutY="152.0" prefHeight="17.0" prefWidth="160.0" text="Date" StackPane.alignment="CENTER_RIGHT">
                     <StackPane.margin>
                         <Insets bottom="50.0" right="240.0" />
                     </StackPane.margin>
-                    <effect>
-                        <Glow />
-                    </effect>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
                 </Label>
                 <Label text="NEW APPOINTMENT" StackPane.alignment="TOP_CENTER">
                     <StackPane.margin>
                         <Insets top="50.0" />
                     </StackPane.margin>
                     <font>
-                        <Font size="27.0" />
+                        <Font name="Segoe Print" size="24.0" />
                     </font>
                     <effect>
                         <Reflection topOpacity="0.21" />
@@ -185,7 +187,7 @@
                   <Insets />
                </opaqueInsets>
                 </Label>
-                <AnchorPane fx:id="datePicker1" maxHeight="40.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="300.0" stylesheets="@../../../../stylesheet/style7.css" StackPane.alignment="CENTER_RIGHT">
+                <AnchorPane fx:id="datePicker1" maxHeight="40.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="300.0" stylesheets="@../../../../stylesheet/style7_light.css" StackPane.alignment="CENTER_RIGHT">
                     <StackPane.margin>
                         <Insets right="100.0" />
                     </StackPane.margin>
@@ -615,7 +617,7 @@
             </StackPane>
         </Tab>
         <Tab text="Modify Appointment">
-            <StackPane fx:id="modifyAppointmentTab" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" stylesheets="@../../../../stylesheet/style7.css">
+            <StackPane fx:id="modifyAppointmentTab" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" style="-fx-background-color: #CDC9C9;" stylesheets="@../../../../stylesheet/style7_light.css">
                 <TextField fx:id="patientIDTxt" maxWidth="300.0" minWidth="100.0" promptText="Enter Patient ID" StackPane.alignment="TOP_CENTER">
                     <StackPane.margin>
                         <Insets top="40.0" />
@@ -626,465 +628,472 @@
                         <Insets left="450.0" top="40.0" />
                     </StackPane.margin>
                 </Button>
-                <StackPane fx:id="innerStack" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: #464546;" visible="false" StackPane.alignment="CENTER">
+                <StackPane fx:id="innerStack" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: #3801ff; -fx-border-width: 3px 3px 3px 0;" visible="false" StackPane.alignment="CENTER">
                     <StackPane.margin>
-                        <Insets bottom="80.0" top="100.0" />
+                        <Insets bottom="80.0" left="20.0" right="20.0" top="100.0" />
                     </StackPane.margin>
-                    <AnchorPane maxWidth="210.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: inherit;" StackPane.alignment="CENTER_LEFT">
-                        <ListView fx:id="appointmentList" editable="true" layoutX="8.0" layoutY="-12.0" maxWidth="1.7976931348623157E308" onMouseClicked="#callGetAppointment" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: inherit;" styleClass="list-cell" stylesheets="@../../../../stylesheet/style3.css" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="50.0" />
+                    <AnchorPane maxWidth="230.0" prefHeight="200.0" prefWidth="230.0" style="-fx-border-color: #3801ff; -fx-border-width: 0 3px 0 3px;" StackPane.alignment="CENTER_LEFT">
+                        <ListView fx:id="appointmentList" editable="true" layoutX="8.0" layoutY="-12.0" maxWidth="1.7976931348623157E308" onMouseClicked="#callGetAppointment" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: #3801ff; -fx-border-width: 3px 0 0 0;" styleClass="list-cell" stylesheets="@../../../../stylesheet/style3_light.css" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="50.0" />
                         <Label fx:id="patientName" alignment="CENTER" layoutX="58.0" layoutY="6.0" text="patientName" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" />
                         <Label alignment="CENTER" layoutX="42.0" layoutY="28.0" text="Appointments List" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" />
                     </AnchorPane>
-               <JFXCheckBox fx:id="visitedCheckBox" checkedColor="#434343" disable="true" text="Visited" textFill="WHITE" unCheckedColor="WHITE" StackPane.alignment="TOP_CENTER">
+               <StackPane prefHeight="150.0" prefWidth="200.0">
                   <StackPane.margin>
-                     <Insets left="500.0" />
+                     <Insets left="230.0" />
                   </StackPane.margin>
-                  <padding>
-                     <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                  </padding>
-               </JFXCheckBox>
-                   <Button fx:id="saveBTN" mnemonicParsing="false" onAction="#callSave" prefWidth="100.0" text="save" StackPane.alignment="TOP_CENTER">
-                       <StackPane.margin>
-                           <Insets left="150.0" top="150.0" />
-                       </StackPane.margin>
-                   </Button>
-                   <Button fx:id="deleteBTN" mnemonicParsing="false" onAction="#callDelete" prefWidth="100.0" text="delete" StackPane.alignment="TOP_CENTER">
-                       <StackPane.margin>
-                           <Insets right="150.0" top="150.0" />
-                       </StackPane.margin>
-                   </Button>
-               <TextField fx:id="departmentCB" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#changingExpertiseNotAllowed" prefHeight="40.0" prefWidth="300.0" StackPane.alignment="TOP_CENTER">
-                  <StackPane.margin>
-                     <Insets top="60.0" />
-                  </StackPane.margin>
-               </TextField>
-                    <AnchorPane fx:id="datePicker2" maxHeight="40.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="300.0" stylesheets="@../../../../stylesheet/style7.css" StackPane.alignment="TOP_CENTER">
+                  <children>
+                     <JFXCheckBox fx:id="visitedCheckBox" checkedColor="#3801ff" disable="true" text="Visited" unCheckedColor="BLACK" StackPane.alignment="CENTER">
                         <StackPane.margin>
-                            <Insets />
+                           <Insets bottom="90.0" left="450.0" />
                         </StackPane.margin>
-                        <TextField fx:id="dateField2" layoutY="14.0" prefHeight="36.0" prefWidth="265.0" promptText="date of appointment" AnchorPane.topAnchor="0.0" />
-                        <Button fx:id="pickerbtn2" layoutX="163.0" layoutY="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#callPick2" prefHeight="35.0" prefWidth="35.0" style="-fx-effect: none;" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                            <graphic>
-                                <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
-                                    <viewport>
-                                        <Rectangle2D />
-                                    </viewport>
-                                    <Image url="@../../../../icons/calenderDark.png" />
-                                </ImageView>
-                            </graphic>
-                        </Button>
-                        <AnchorPane fx:id="datepicker2" layoutY="50.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #2b2b2b;" stylesheets="@../../../../stylesheet/datePicker.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="35.0">
-                            <AnchorPane fx:id="dayPane2" layoutY="38.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="165.0" prefWidth="200.0" style="-fx-background-color: #2b2b2b;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0">
-                                <effect>
-                                    <DropShadow />
-                                </effect>
-                                <GridPane fx:id="days2" prefHeight="165.0" prefWidth="300.0">
-                                    <columnConstraints>
-                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                    </columnConstraints>
-                                    <rowConstraints>
-                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                    </rowConstraints>
-                                    <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="1" GridPane.rowIndex="1">
-                                        <font>
-                                            <Font size="11.0" />
-                                        </font>
-                                    </Button>
-                                    <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="2" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                                        <font>
-                                            <Font size="11.0" />
-                                        </font>
-                                    </Button>
-                                    <Button layoutX="10.0" layoutY="17.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="3" GridPane.columnIndex="2" GridPane.rowIndex="1">
-                                        <font>
-                                            <Font size="11.0" />
-                                        </font>
-                                    </Button>
-                                    <Button layoutX="10.0" layoutY="17.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="4" GridPane.columnIndex="3" GridPane.rowIndex="1">
-                                        <font>
-                                            <Font size="11.0" />
-                                        </font>
-                                    </Button>
-                                    <Button layoutX="10.0" layoutY="17.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="5" GridPane.columnIndex="4" GridPane.rowIndex="1">
-                                        <font>
-                                            <Font size="11.0" />
-                                        </font>
-                                    </Button>
-                                    <Button layoutX="10.0" layoutY="17.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="6" GridPane.columnIndex="5" GridPane.rowIndex="1">
-                                        <font>
-                                            <Font size="11.0" />
-                                        </font>
-                                    </Button>
-                                    <Button layoutX="10.0" layoutY="17.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="7" GridPane.columnIndex="6" GridPane.rowIndex="1">
-                                        <font>
-                                            <Font size="11.0" />
-                                        </font>
-                                    </Button>
-                                    <Button layoutX="10.0" layoutY="17.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="8" GridPane.rowIndex="2">
-                                        <font>
-                                            <Font size="11.0" />
-                                        </font>
-                                    </Button>
-                                    <Button layoutX="10.0" layoutY="17.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="9" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                                        <font>
-                                            <Font size="11.0" />
-                                        </font>
-                                    </Button>
-                                    <Button layoutX="10.0" layoutY="17.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="10" GridPane.columnIndex="2" GridPane.rowIndex="2">
-                                        <font>
-                                            <Font size="11.0" />
-                                        </font>
-                                    </Button>
-                                    <Button layoutX="10.0" layoutY="17.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="11" GridPane.columnIndex="3" GridPane.rowIndex="2">
-                                        <font>
-                                            <Font size="11.0" />
-                                        </font>
-                                    </Button>
-                                    <Button layoutX="10.0" layoutY="17.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="12" GridPane.columnIndex="4" GridPane.rowIndex="2">
-                                        <font>
-                                            <Font size="11.0" />
-                                        </font>
-                                    </Button>
-                                    <Button layoutX="10.0" layoutY="17.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="13" GridPane.columnIndex="5" GridPane.rowIndex="2">
-                                        <font>
-                                            <Font size="11.0" />
-                                        </font>
-                                    </Button>
-                                    <Button layoutX="10.0" layoutY="17.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="14" GridPane.columnIndex="6" GridPane.rowIndex="2">
-                                        <font>
-                                            <Font size="11.0" />
-                                        </font>
-                                    </Button>
-                                    <Button layoutX="10.0" layoutY="17.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="15" GridPane.rowIndex="3">
-                                        <font>
-                                            <Font size="11.0" />
-                                        </font>
-                                    </Button>
-                                    <Button layoutX="10.0" layoutY="17.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="16" GridPane.columnIndex="1" GridPane.rowIndex="3">
-                                        <font>
-                                            <Font size="11.0" />
-                                        </font>
-                                    </Button>
-                                    <Button layoutX="10.0" layoutY="17.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="44.0" prefWidth="14.0" text="17" GridPane.columnIndex="2" GridPane.rowIndex="3">
-                                        <font>
-                                            <Font size="11.0" />
-                                        </font>
-                                    </Button>
-                                    <Button layoutX="10.0" layoutY="17.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="18" GridPane.columnIndex="3" GridPane.rowIndex="3">
-                                        <font>
-                                            <Font size="11.0" />
-                                        </font>
-                                    </Button>
-                                    <Button layoutX="10.0" layoutY="17.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="19" GridPane.columnIndex="4" GridPane.rowIndex="3">
-                                        <font>
-                                            <Font size="11.0" />
-                                        </font>
-                                    </Button>
-                                    <Button layoutX="10.0" layoutY="17.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="20" GridPane.columnIndex="5" GridPane.rowIndex="3">
-                                        <font>
-                                            <Font size="11.0" />
-                                        </font>
-                                    </Button>
-                                    <Button layoutX="10.0" layoutY="17.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="21" GridPane.columnIndex="6" GridPane.rowIndex="3">
-                                        <font>
-                                            <Font size="11.0" />
-                                        </font>
-                                    </Button>
-                                    <Button layoutX="10.0" layoutY="17.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="22" GridPane.rowIndex="4">
-                                        <font>
-                                            <Font size="11.0" />
-                                        </font>
-                                    </Button>
-                                    <Button layoutX="10.0" layoutY="17.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="23" GridPane.columnIndex="1" GridPane.rowIndex="4">
-                                        <font>
-                                            <Font size="11.0" />
-                                        </font>
-                                    </Button>
-                                    <Button layoutX="10.0" layoutY="17.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="24" GridPane.columnIndex="2" GridPane.rowIndex="4">
-                                        <font>
-                                            <Font size="11.0" />
-                                        </font>
-                                    </Button>
-                                    <Button layoutX="10.0" layoutY="17.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="25" GridPane.columnIndex="3" GridPane.rowIndex="4">
-                                        <font>
-                                            <Font size="11.0" />
-                                        </font>
-                                    </Button>
-                                    <Button layoutX="10.0" layoutY="17.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="26" GridPane.columnIndex="4" GridPane.rowIndex="4">
-                                        <font>
-                                            <Font size="11.0" />
-                                        </font>
-                                    </Button>
-                                    <Button layoutX="10.0" layoutY="17.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="27" GridPane.columnIndex="5" GridPane.rowIndex="4">
-                                        <font>
-                                            <Font size="11.0" />
-                                        </font>
-                                    </Button>
-                                    <Button layoutX="10.0" layoutY="17.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="28" GridPane.columnIndex="6" GridPane.rowIndex="4">
-                                        <font>
-                                            <Font size="11.0" />
-                                        </font>
-                                    </Button>
-                                    <Button fx:id="BtnDay291" layoutX="10.0" layoutY="17.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="29" GridPane.rowIndex="5">
-                                        <font>
-                                            <Font size="11.0" />
-                                        </font>
-                                    </Button>
-                                    <Button fx:id="BtnDay301" layoutX="10.0" layoutY="17.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="30" GridPane.columnIndex="1" GridPane.rowIndex="5">
-                                        <font>
-                                            <Font size="11.0" />
-                                        </font>
-                                    </Button>
-                                    <Button fx:id="BtnDay311" layoutX="10.0" layoutY="17.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="31" GridPane.columnIndex="2" GridPane.rowIndex="5">
-                                        <font>
-                                            <Font size="11.0" />
-                                        </font>
-                                    </Button>
-                                </GridPane>
-                            </AnchorPane>
-                            <AnchorPane fx:id="monthPane2" layoutY="39.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="165.0" prefWidth="200.0" style="-fx-background-color: #2b2b2b;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0">
-                                <effect>
-                                    <DropShadow />
-                                </effect>
-                                <GridPane fx:id="months2" layoutY="15.0" prefHeight="165.0" prefWidth="300.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                    <columnConstraints>
-                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                    </columnConstraints>
-                                    <rowConstraints>
-                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                    </rowConstraints>
-                                    <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="JANUARY" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-                                    <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="DECEMBER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
-                                    <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="NOVEMBER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
-                                    <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="OCTOBER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
-                                    <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="SEPTEMBER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-                                    <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="AUGUST" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-                                    <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="JUNE" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
-                                    <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="MAY" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
-                                    <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="APRIL" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
-                                    <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="MARCH" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-                                    <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="FEBRUARY" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-                                    <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="JULY" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-                                </GridPane>
-                            </AnchorPane>
-                            <AnchorPane fx:id="yearPane2" layoutY="39.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="165.0" prefWidth="200.0" style="-fx-background-color: #2b2b2b;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0">
-                                <effect>
-                                    <DropShadow />
-                                </effect>
-                                <Button fx:id="yearGoPrevBtn2" mnemonicParsing="false" onAction="#callYearGoPrev2" text="&lt;" AnchorPane.leftAnchor="100.0" />
-                                <Button fx:id="yearGoNextBtn2" layoutX="172.0" layoutY="2.0" mnemonicParsing="false" onAction="#callYearGoNext2" text="&gt;" AnchorPane.rightAnchor="100.0" />
-                                <GridPane fx:id="years2" layoutX="-1.0" layoutY="26.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="140.0" prefWidth="300.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
-                                    <columnConstraints>
-                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                    </columnConstraints>
-                                    <rowConstraints>
-                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                    </rowConstraints>
-                                    <Button layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="1995">
-                                        <font>
-                                            <Font size="10.0" />
-                                        </font>
-                                    </Button>
-                                    <Button layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="1996" GridPane.columnIndex="1">
-                                        <font>
-                                            <Font size="10.0" />
-                                        </font>
-                                    </Button>
-                                    <Button layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="1997" GridPane.columnIndex="2">
-                                        <font>
-                                            <Font size="10.0" />
-                                        </font>
-                                    </Button>
-                                    <Button layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="1998" GridPane.columnIndex="3">
-                                        <font>
-                                            <Font size="10.0" />
-                                        </font>
-                                    </Button>
-                                    <Button layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="1999" GridPane.columnIndex="4">
-                                        <font>
-                                            <Font size="10.0" />
-                                        </font>
-                                    </Button>
-                                    <Button layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="2000" GridPane.rowIndex="1">
-                                        <font>
-                                            <Font size="10.0" />
-                                        </font>
-                                    </Button>
-                                    <Button layoutX="10.0" layoutY="64.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="2001" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                                        <font>
-                                            <Font size="10.0" />
-                                        </font>
-                                    </Button>
-                                    <Button layoutX="60.0" layoutY="64.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="2002" GridPane.columnIndex="2" GridPane.rowIndex="1">
-                                        <font>
-                                            <Font size="10.0" />
-                                        </font>
-                                    </Button>
-                                    <Button layoutX="110.0" layoutY="64.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="2003" GridPane.columnIndex="3" GridPane.rowIndex="1">
-                                        <font>
-                                            <Font size="10.0" />
-                                        </font>
-                                    </Button>
-                                    <Button layoutX="160.0" layoutY="64.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="2004" GridPane.columnIndex="4" GridPane.rowIndex="1">
-                                        <font>
-                                            <Font size="10.0" />
-                                        </font>
-                                    </Button>
-                                    <Button layoutX="210.0" layoutY="64.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="2005" GridPane.rowIndex="2">
-                                        <font>
-                                            <Font size="10.0" />
-                                        </font>
-                                    </Button>
-                                    <Button layoutX="10.0" layoutY="91.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="2006" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                                        <font>
-                                            <Font size="10.0" />
-                                        </font>
-                                    </Button>
-                                    <Button layoutX="60.0" layoutY="91.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="2007" GridPane.columnIndex="2" GridPane.rowIndex="2">
-                                        <font>
-                                            <Font size="10.0" />
-                                        </font>
-                                    </Button>
-                                    <Button layoutX="110.0" layoutY="91.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="2008" GridPane.columnIndex="3" GridPane.rowIndex="2">
-                                        <font>
-                                            <Font size="10.0" />
-                                        </font>
-                                    </Button>
-                                    <Button layoutX="160.0" layoutY="91.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="2009" GridPane.columnIndex="4" GridPane.rowIndex="2">
-                                        <font>
-                                            <Font size="10.0" />
-                                        </font>
-                                    </Button>
-                                    <Button layoutX="210.0" layoutY="91.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="2010" GridPane.rowIndex="3">
-                                        <font>
-                                            <Font size="10.0" />
-                                        </font>
-                                    </Button>
-                                    <Button layoutX="10.0" layoutY="118.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="2011" GridPane.columnIndex="1" GridPane.rowIndex="3">
-                                        <font>
-                                            <Font size="10.0" />
-                                        </font>
-                                    </Button>
-                                    <Button layoutX="60.0" layoutY="118.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="2012" GridPane.columnIndex="2" GridPane.rowIndex="3">
-                                        <font>
-                                            <Font size="10.0" />
-                                        </font>
-                                    </Button>
-                                    <Button layoutX="110.0" layoutY="118.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="2013" GridPane.columnIndex="3" GridPane.rowIndex="3">
-                                        <font>
-                                            <Font size="10.0" />
-                                        </font>
-                                    </Button>
-                                    <Button layoutX="160.0" layoutY="118.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="2014" GridPane.columnIndex="4" GridPane.rowIndex="3">
-                                        <font>
-                                            <Font size="10.0" />
-                                        </font>
-                                    </Button>
-                                    <Button layoutX="210.0" layoutY="118.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="2015" GridPane.rowIndex="4">
-                                        <font>
-                                            <Font size="10.0" />
-                                        </font>
-                                    </Button>
-                                    <Button layoutX="10.0" layoutY="145.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="2016" GridPane.columnIndex="1" GridPane.rowIndex="4">
-                                        <font>
-                                            <Font size="10.0" />
-                                        </font>
-                                    </Button>
-                                    <Button layoutX="60.0" layoutY="145.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="2017" GridPane.columnIndex="2" GridPane.rowIndex="4">
-                                        <font>
-                                            <Font size="10.0" />
-                                        </font>
-                                    </Button>
-                                    <Button layoutX="110.0" layoutY="145.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="2018" GridPane.columnIndex="3" GridPane.rowIndex="4">
-                                        <font>
-                                            <Font size="10.0" />
-                                        </font>
-                                    </Button>
-                                    <Button layoutX="160.0" layoutY="145.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="2019" GridPane.columnIndex="4" GridPane.rowIndex="4">
-                                        <font>
-                                            <Font size="10.0" />
-                                        </font>
-                                    </Button>
-                                    <Button layoutX="210.0" layoutY="145.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="2020" GridPane.rowIndex="5">
-                                        <font>
-                                            <Font size="10.0" />
-                                        </font>
-                                    </Button>
-                                    <Button layoutX="10.0" layoutY="172.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="2021" GridPane.columnIndex="1" GridPane.rowIndex="5">
-                                        <font>
-                                            <Font size="10.0" />
-                                        </font>
-                                    </Button>
-                                    <Button layoutX="60.0" layoutY="172.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="2022" GridPane.columnIndex="2" GridPane.rowIndex="5">
-                                        <font>
-                                            <Font size="10.0" />
-                                        </font>
-                                    </Button>
-                                    <Button layoutX="110.0" layoutY="172.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="2023" GridPane.columnIndex="3" GridPane.rowIndex="5">
-                                        <font>
-                                            <Font size="10.0" />
-                                        </font>
-                                    </Button>
-                                    <Button layoutX="160.0" layoutY="172.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="2024" GridPane.columnIndex="4" GridPane.rowIndex="5">
-                                        <font>
-                                            <Font size="10.0" />
-                                        </font>
-                                    </Button>
-                                </GridPane>
-                            </AnchorPane>
-                            <Label fx:id="yearBtn2" layoutX="145.0" layoutY="4.0" onMouseClicked="#yearBTNClicked2" text="yyyy">
-                                <font>
-                                    <Font size="17.0" />
-                                </font>
-                            </Label>
-                            <Label fx:id="monthBtn2" layoutX="85.0" layoutY="4.0" onMouseClicked="#monthBtnClicked2" text="MM">
-                                <font>
-                                    <Font size="17.0" />
-                                </font>
-                            </Label>
-                            <Label fx:id="dayBtn2" layoutX="23.0" layoutY="4.0" onMouseClicked="#dayBtnClicked2" text="dd">
-                                <font>
-                                    <Font size="17.0" />
-                                </font>
-                            </Label>
-                            <Label layoutX="63.0" layoutY="4.0" onMouseClicked="#dayBtnClicked1" text="/">
-                                <font>
-                                    <Font size="17.0" />
-                                </font>
-                            </Label>
-                            <Label layoutX="125.0" layoutY="4.0" onMouseClicked="#dayBtnClicked1" text="/">
-                                <font>
-                                    <Font size="17.0" />
-                                </font>
-                            </Label>
-                        </AnchorPane>
-                    </AnchorPane>
+                        <padding>
+                           <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                        </padding>
+                     </JFXCheckBox>
+                         <Button fx:id="saveBTN" mnemonicParsing="false" onAction="#callSave" prefWidth="100.0" text="save" StackPane.alignment="CENTER">
+                             <StackPane.margin>
+                                 <Insets left="150.0" top="150.0" />
+                             </StackPane.margin>
+                         </Button>
+                         <Button fx:id="deleteBTN" mnemonicParsing="false" onAction="#callDelete" prefWidth="100.0" text="delete" StackPane.alignment="CENTER">
+                             <StackPane.margin>
+                                 <Insets right="150.0" top="150.0" />
+                             </StackPane.margin>
+                         </Button>
+                     <TextField fx:id="departmentCB" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#changingExpertiseNotAllowed" prefHeight="40.0" prefWidth="300.0" StackPane.alignment="CENTER">
+                        <StackPane.margin>
+                           <Insets top="10.0" />
+                        </StackPane.margin>
+                     </TextField>
+                          <AnchorPane fx:id="datePicker2" maxHeight="40.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="300.0" stylesheets="@../../../../stylesheet/style7_light.css" StackPane.alignment="CENTER">
+                              <StackPane.margin>
+                                  <Insets bottom="90.0" />
+                              </StackPane.margin>
+                              <TextField fx:id="dateField2" layoutY="14.0" prefHeight="36.0" prefWidth="265.0" promptText="date of appointment" AnchorPane.topAnchor="0.0" />
+                              <Button fx:id="pickerbtn2" layoutX="163.0" layoutY="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#callPick2" prefHeight="35.0" prefWidth="35.0" style="-fx-effect: none;" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                  <graphic>
+                                      <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                          <viewport>
+                                              <Rectangle2D />
+                                          </viewport>
+                                          <Image url="@../../../../icons/calenderDark.png" />
+                                      </ImageView>
+                                  </graphic>
+                              </Button>
+                              <AnchorPane fx:id="datepicker2" layoutY="50.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #2b2b2b;" stylesheets="@../../../../stylesheet/datePicker.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="35.0">
+                                  <AnchorPane fx:id="dayPane2" layoutY="38.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="165.0" prefWidth="200.0" style="-fx-background-color: #2b2b2b;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0">
+                                      <effect>
+                                          <DropShadow />
+                                      </effect>
+                                      <GridPane fx:id="days2" prefHeight="165.0" prefWidth="300.0">
+                                          <columnConstraints>
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          </columnConstraints>
+                                          <rowConstraints>
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          </rowConstraints>
+                                          <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="1" GridPane.rowIndex="1">
+                                              <font>
+                                                  <Font size="11.0" />
+                                              </font>
+                                          </Button>
+                                          <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="2" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                              <font>
+                                                  <Font size="11.0" />
+                                              </font>
+                                          </Button>
+                                          <Button layoutX="10.0" layoutY="17.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="3" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                              <font>
+                                                  <Font size="11.0" />
+                                              </font>
+                                          </Button>
+                                          <Button layoutX="10.0" layoutY="17.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="4" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                              <font>
+                                                  <Font size="11.0" />
+                                              </font>
+                                          </Button>
+                                          <Button layoutX="10.0" layoutY="17.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="5" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                                              <font>
+                                                  <Font size="11.0" />
+                                              </font>
+                                          </Button>
+                                          <Button layoutX="10.0" layoutY="17.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="6" GridPane.columnIndex="5" GridPane.rowIndex="1">
+                                              <font>
+                                                  <Font size="11.0" />
+                                              </font>
+                                          </Button>
+                                          <Button layoutX="10.0" layoutY="17.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="7" GridPane.columnIndex="6" GridPane.rowIndex="1">
+                                              <font>
+                                                  <Font size="11.0" />
+                                              </font>
+                                          </Button>
+                                          <Button layoutX="10.0" layoutY="17.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="8" GridPane.rowIndex="2">
+                                              <font>
+                                                  <Font size="11.0" />
+                                              </font>
+                                          </Button>
+                                          <Button layoutX="10.0" layoutY="17.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="9" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                              <font>
+                                                  <Font size="11.0" />
+                                              </font>
+                                          </Button>
+                                          <Button layoutX="10.0" layoutY="17.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="10" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                              <font>
+                                                  <Font size="11.0" />
+                                              </font>
+                                          </Button>
+                                          <Button layoutX="10.0" layoutY="17.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="11" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                                              <font>
+                                                  <Font size="11.0" />
+                                              </font>
+                                          </Button>
+                                          <Button layoutX="10.0" layoutY="17.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="12" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                                              <font>
+                                                  <Font size="11.0" />
+                                              </font>
+                                          </Button>
+                                          <Button layoutX="10.0" layoutY="17.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="13" GridPane.columnIndex="5" GridPane.rowIndex="2">
+                                              <font>
+                                                  <Font size="11.0" />
+                                              </font>
+                                          </Button>
+                                          <Button layoutX="10.0" layoutY="17.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="14" GridPane.columnIndex="6" GridPane.rowIndex="2">
+                                              <font>
+                                                  <Font size="11.0" />
+                                              </font>
+                                          </Button>
+                                          <Button layoutX="10.0" layoutY="17.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="15" GridPane.rowIndex="3">
+                                              <font>
+                                                  <Font size="11.0" />
+                                              </font>
+                                          </Button>
+                                          <Button layoutX="10.0" layoutY="17.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="16" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                              <font>
+                                                  <Font size="11.0" />
+                                              </font>
+                                          </Button>
+                                          <Button layoutX="10.0" layoutY="17.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="44.0" prefWidth="14.0" text="17" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                              <font>
+                                                  <Font size="11.0" />
+                                              </font>
+                                          </Button>
+                                          <Button layoutX="10.0" layoutY="17.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="18" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                                              <font>
+                                                  <Font size="11.0" />
+                                              </font>
+                                          </Button>
+                                          <Button layoutX="10.0" layoutY="17.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="19" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                                              <font>
+                                                  <Font size="11.0" />
+                                              </font>
+                                          </Button>
+                                          <Button layoutX="10.0" layoutY="17.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="20" GridPane.columnIndex="5" GridPane.rowIndex="3">
+                                              <font>
+                                                  <Font size="11.0" />
+                                              </font>
+                                          </Button>
+                                          <Button layoutX="10.0" layoutY="17.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="21" GridPane.columnIndex="6" GridPane.rowIndex="3">
+                                              <font>
+                                                  <Font size="11.0" />
+                                              </font>
+                                          </Button>
+                                          <Button layoutX="10.0" layoutY="17.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="22" GridPane.rowIndex="4">
+                                              <font>
+                                                  <Font size="11.0" />
+                                              </font>
+                                          </Button>
+                                          <Button layoutX="10.0" layoutY="17.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="23" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                              <font>
+                                                  <Font size="11.0" />
+                                              </font>
+                                          </Button>
+                                          <Button layoutX="10.0" layoutY="17.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="24" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                                              <font>
+                                                  <Font size="11.0" />
+                                              </font>
+                                          </Button>
+                                          <Button layoutX="10.0" layoutY="17.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="25" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                                              <font>
+                                                  <Font size="11.0" />
+                                              </font>
+                                          </Button>
+                                          <Button layoutX="10.0" layoutY="17.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="26" GridPane.columnIndex="4" GridPane.rowIndex="4">
+                                              <font>
+                                                  <Font size="11.0" />
+                                              </font>
+                                          </Button>
+                                          <Button layoutX="10.0" layoutY="17.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="27" GridPane.columnIndex="5" GridPane.rowIndex="4">
+                                              <font>
+                                                  <Font size="11.0" />
+                                              </font>
+                                          </Button>
+                                          <Button layoutX="10.0" layoutY="17.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="28" GridPane.columnIndex="6" GridPane.rowIndex="4">
+                                              <font>
+                                                  <Font size="11.0" />
+                                              </font>
+                                          </Button>
+                                          <Button fx:id="BtnDay291" layoutX="10.0" layoutY="17.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="29" GridPane.rowIndex="5">
+                                              <font>
+                                                  <Font size="11.0" />
+                                              </font>
+                                          </Button>
+                                          <Button fx:id="BtnDay301" layoutX="10.0" layoutY="17.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="30" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                              <font>
+                                                  <Font size="11.0" />
+                                              </font>
+                                          </Button>
+                                          <Button fx:id="BtnDay311" layoutX="10.0" layoutY="17.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="31" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                                              <font>
+                                                  <Font size="11.0" />
+                                              </font>
+                                          </Button>
+                                      </GridPane>
+                                  </AnchorPane>
+                                  <AnchorPane fx:id="monthPane2" layoutY="39.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="165.0" prefWidth="200.0" style="-fx-background-color: #2b2b2b;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0">
+                                      <effect>
+                                          <DropShadow />
+                                      </effect>
+                                      <GridPane fx:id="months2" layoutY="15.0" prefHeight="165.0" prefWidth="300.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <columnConstraints>
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          </columnConstraints>
+                                          <rowConstraints>
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          </rowConstraints>
+                                          <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="JANUARY" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                                          <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="DECEMBER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
+                                          <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="NOVEMBER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+                                          <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="OCTOBER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+                                          <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="SEPTEMBER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                                          <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="AUGUST" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                                          <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="JUNE" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
+                                          <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="MAY" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+                                          <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="APRIL" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+                                          <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="MARCH" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                                          <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="FEBRUARY" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                                          <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="JULY" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                                      </GridPane>
+                                  </AnchorPane>
+                                  <AnchorPane fx:id="yearPane2" layoutY="39.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="165.0" prefWidth="200.0" style="-fx-background-color: #2b2b2b;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0">
+                                      <effect>
+                                          <DropShadow />
+                                      </effect>
+                                      <Button fx:id="yearGoPrevBtn2" mnemonicParsing="false" onAction="#callYearGoPrev2" text="&lt;" AnchorPane.leftAnchor="100.0" />
+                                      <Button fx:id="yearGoNextBtn2" layoutX="172.0" layoutY="2.0" mnemonicParsing="false" onAction="#callYearGoNext2" text="&gt;" AnchorPane.rightAnchor="100.0" />
+                                      <GridPane fx:id="years2" layoutX="-1.0" layoutY="26.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="140.0" prefWidth="300.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+                                          <columnConstraints>
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          </columnConstraints>
+                                          <rowConstraints>
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          </rowConstraints>
+                                          <Button layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="1995">
+                                              <font>
+                                                  <Font size="10.0" />
+                                              </font>
+                                          </Button>
+                                          <Button layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="1996" GridPane.columnIndex="1">
+                                              <font>
+                                                  <Font size="10.0" />
+                                              </font>
+                                          </Button>
+                                          <Button layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="1997" GridPane.columnIndex="2">
+                                              <font>
+                                                  <Font size="10.0" />
+                                              </font>
+                                          </Button>
+                                          <Button layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="1998" GridPane.columnIndex="3">
+                                              <font>
+                                                  <Font size="10.0" />
+                                              </font>
+                                          </Button>
+                                          <Button layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="1999" GridPane.columnIndex="4">
+                                              <font>
+                                                  <Font size="10.0" />
+                                              </font>
+                                          </Button>
+                                          <Button layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="2000" GridPane.rowIndex="1">
+                                              <font>
+                                                  <Font size="10.0" />
+                                              </font>
+                                          </Button>
+                                          <Button layoutX="10.0" layoutY="64.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="2001" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                              <font>
+                                                  <Font size="10.0" />
+                                              </font>
+                                          </Button>
+                                          <Button layoutX="60.0" layoutY="64.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="2002" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                              <font>
+                                                  <Font size="10.0" />
+                                              </font>
+                                          </Button>
+                                          <Button layoutX="110.0" layoutY="64.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="2003" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                              <font>
+                                                  <Font size="10.0" />
+                                              </font>
+                                          </Button>
+                                          <Button layoutX="160.0" layoutY="64.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="2004" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                                              <font>
+                                                  <Font size="10.0" />
+                                              </font>
+                                          </Button>
+                                          <Button layoutX="210.0" layoutY="64.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="2005" GridPane.rowIndex="2">
+                                              <font>
+                                                  <Font size="10.0" />
+                                              </font>
+                                          </Button>
+                                          <Button layoutX="10.0" layoutY="91.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="2006" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                              <font>
+                                                  <Font size="10.0" />
+                                              </font>
+                                          </Button>
+                                          <Button layoutX="60.0" layoutY="91.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="2007" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                              <font>
+                                                  <Font size="10.0" />
+                                              </font>
+                                          </Button>
+                                          <Button layoutX="110.0" layoutY="91.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="2008" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                                              <font>
+                                                  <Font size="10.0" />
+                                              </font>
+                                          </Button>
+                                          <Button layoutX="160.0" layoutY="91.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="2009" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                                              <font>
+                                                  <Font size="10.0" />
+                                              </font>
+                                          </Button>
+                                          <Button layoutX="210.0" layoutY="91.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="2010" GridPane.rowIndex="3">
+                                              <font>
+                                                  <Font size="10.0" />
+                                              </font>
+                                          </Button>
+                                          <Button layoutX="10.0" layoutY="118.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="2011" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                              <font>
+                                                  <Font size="10.0" />
+                                              </font>
+                                          </Button>
+                                          <Button layoutX="60.0" layoutY="118.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="2012" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                              <font>
+                                                  <Font size="10.0" />
+                                              </font>
+                                          </Button>
+                                          <Button layoutX="110.0" layoutY="118.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="2013" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                                              <font>
+                                                  <Font size="10.0" />
+                                              </font>
+                                          </Button>
+                                          <Button layoutX="160.0" layoutY="118.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="2014" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                                              <font>
+                                                  <Font size="10.0" />
+                                              </font>
+                                          </Button>
+                                          <Button layoutX="210.0" layoutY="118.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="2015" GridPane.rowIndex="4">
+                                              <font>
+                                                  <Font size="10.0" />
+                                              </font>
+                                          </Button>
+                                          <Button layoutX="10.0" layoutY="145.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="2016" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                              <font>
+                                                  <Font size="10.0" />
+                                              </font>
+                                          </Button>
+                                          <Button layoutX="60.0" layoutY="145.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="2017" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                                              <font>
+                                                  <Font size="10.0" />
+                                              </font>
+                                          </Button>
+                                          <Button layoutX="110.0" layoutY="145.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="2018" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                                              <font>
+                                                  <Font size="10.0" />
+                                              </font>
+                                          </Button>
+                                          <Button layoutX="160.0" layoutY="145.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="2019" GridPane.columnIndex="4" GridPane.rowIndex="4">
+                                              <font>
+                                                  <Font size="10.0" />
+                                              </font>
+                                          </Button>
+                                          <Button layoutX="210.0" layoutY="145.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="2020" GridPane.rowIndex="5">
+                                              <font>
+                                                  <Font size="10.0" />
+                                              </font>
+                                          </Button>
+                                          <Button layoutX="10.0" layoutY="172.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="2021" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                              <font>
+                                                  <Font size="10.0" />
+                                              </font>
+                                          </Button>
+                                          <Button layoutX="60.0" layoutY="172.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="2022" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                                              <font>
+                                                  <Font size="10.0" />
+                                              </font>
+                                          </Button>
+                                          <Button layoutX="110.0" layoutY="172.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="2023" GridPane.columnIndex="3" GridPane.rowIndex="5">
+                                              <font>
+                                                  <Font size="10.0" />
+                                              </font>
+                                          </Button>
+                                          <Button layoutX="160.0" layoutY="172.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="2024" GridPane.columnIndex="4" GridPane.rowIndex="5">
+                                              <font>
+                                                  <Font size="10.0" />
+                                              </font>
+                                          </Button>
+                                      </GridPane>
+                                  </AnchorPane>
+                                  <Label fx:id="yearBtn2" layoutX="145.0" layoutY="4.0" onMouseClicked="#yearBTNClicked2" text="yyyy">
+                                      <font>
+                                          <Font size="17.0" />
+                                      </font>
+                                  </Label>
+                                  <Label fx:id="monthBtn2" layoutX="85.0" layoutY="4.0" onMouseClicked="#monthBtnClicked2" text="MM">
+                                      <font>
+                                          <Font size="17.0" />
+                                      </font>
+                                  </Label>
+                                  <Label fx:id="dayBtn2" layoutX="23.0" layoutY="4.0" onMouseClicked="#dayBtnClicked2" text="dd">
+                                      <font>
+                                          <Font size="17.0" />
+                                      </font>
+                                  </Label>
+                                  <Label layoutX="63.0" layoutY="4.0" onMouseClicked="#dayBtnClicked1" text="/">
+                                      <font>
+                                          <Font size="17.0" />
+                                      </font>
+                                  </Label>
+                                  <Label layoutX="125.0" layoutY="4.0" onMouseClicked="#dayBtnClicked1" text="/">
+                                      <font>
+                                          <Font size="17.0" />
+                                      </font>
+                                  </Label>
+                              </AnchorPane>
+                          </AnchorPane>
+                  </children>
+               </StackPane>
                 </StackPane>
             </StackPane>
         </Tab>

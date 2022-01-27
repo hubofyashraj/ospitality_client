@@ -17,7 +17,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<StackPane fx:id="mainpane" prefHeight="600.0" prefWidth="800.0" stylesheets="@../../../../stylesheet/style7.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ospitality.client.labtechnician.dashboardController">
+<StackPane fx:id="mainpane" prefHeight="600.0" prefWidth="800.0" stylesheets="@../../../../stylesheet/style7_light.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ospitality.client.labtechnician.dashboardController">
    <StackPane fx:id="navbarStackPane" maxHeight="42.0" prefHeight="42.0" prefWidth="600.0" style="-fx-border-color: #777777; -fx-border-width: 0 0 1 0;" stylesheets="@../../../../stylesheet/navbar.css" StackPane.alignment="TOP_CENTER">
       <Button fx:id="dashboardBTN" disable="true" minHeight="25.0" mnemonicParsing="false" onAction="#callDashboard" style="-fx-border-color: #a1a1a1; -fx-border-width: 0 0 1 0;" text="DashBoard" textFill="WHITE" StackPane.alignment="TOP_LEFT">
          <font>
@@ -82,22 +82,22 @@
          <DropShadow />
       </effect>
    </StackPane>
-   <StackPane style="-fx-background-color: #323232;">
+   <StackPane>
       <StackPane.margin>
          <Insets top="42.0" />
       </StackPane.margin>
-      <StackPane maxHeight="180.0" prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: #323232;" StackPane.alignment="TOP_CENTER">
+      <StackPane maxHeight="180.0" prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: #16ff9e;" StackPane.alignment="TOP_CENTER">
          <StackPane.margin>
             <Insets top="20.0" />
          </StackPane.margin>
-         <HBox maxHeight="140.0" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="140.0" prefWidth="760.0" spacing="20.0">
+         <HBox maxHeight="140.0" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="140.0" prefWidth="760.0" spacing="20.0" style="-fx-background-color: #16ff9e;">
             <padding>
                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
             </padding>
             <StackPane.margin>
                <Insets top="40.0" />
             </StackPane.margin>
-            <AnchorPane maxHeight="150.0" maxWidth="150.0" style="-fx-background-color: #323232;">
+            <AnchorPane maxHeight="150.0" maxWidth="150.0" style="-fx-background-color: #16ff9e;">
                <HBox.margin>
                   <Insets left="-20.0" top="-20.0" />
                </HBox.margin>
@@ -114,16 +114,16 @@
                <Label fx:id="userNameTxt" alignment="CENTER" layoutY="100.0" prefHeight="16.0" prefWidth="156.0" text="Name" textAlignment="CENTER" textFill="WHITE" />
                <Label fx:id="roleTxt" alignment="CENTER" layoutY="120.0" opacity="0.63" prefHeight="16.0" prefWidth="156.0" text="Role" textAlignment="CENTER" textFill="WHITE" />
             </AnchorPane>
-            <StackPane maxHeight="80.0" maxWidth="1.7976931348623157E308" prefHeight="80.0" prefWidth="200.0" style="-fx-background-radius: 50; -fx-background-color: #2e2e2e;">
+            <StackPane maxHeight="80.0" maxWidth="1.7976931348623157E308" prefHeight="80.0" prefWidth="200.0" style="-fx-background-radius: 50; -fx-background-color: #16ff9e;">
                <effect>
-                  <DropShadow height="5.0" radius="2.0" width="5.0">
+                  <DropShadow height="93.49" radius="46.3375" width="93.86">
                      <color>
-                        <Color opacity="0.4675324559211731" />
+                        <Color red="0.06120000034570694" green="0.36000001430511475" blue="0.20562000572681427" />
                      </color>
                   </DropShadow>
                </effect>
                <HBox.margin>
-                  <Insets top="-20.0" />
+                  <Insets left="-20.0" top="-20.0" />
                </HBox.margin>
                <Label alignment="CENTER" maxWidth="110.0" minWidth="110.0" text="DESIGNATION" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" underline="true" StackPane.alignment="TOP_CENTER">
                   <StackPane.margin>
@@ -138,11 +138,11 @@
                   <Insets left="10.0" right="10.0" />
                </padding>
             </StackPane>
-            <StackPane maxHeight="80.0" maxWidth="1.7976931348623157E308" prefHeight="80.0" prefWidth="200.0" style="-fx-background-radius: 50; -fx-background-color: #2e2e2e;">
+            <StackPane maxHeight="80.0" maxWidth="1.7976931348623157E308" prefHeight="80.0" prefWidth="200.0" style="-fx-background-radius: 50; -fx-background-color: #16ff9e;">
                <effect>
-                  <DropShadow height="5.0" radius="2.0" width="5.0">
+                  <DropShadow height="93.49" radius="46.3375" width="93.86">
                      <color>
-                        <Color opacity="0.4675324559211731" />
+                        <Color red="0.06120000034570694" green="0.36000001430511475" blue="0.20562000572681427" />
                      </color>
                   </DropShadow>
                </effect>
@@ -162,11 +162,11 @@
                   <Insets left="10.0" right="10.0" />
                </padding>
             </StackPane>
-            <StackPane maxHeight="80.0" maxWidth="1.7976931348623157E308" prefHeight="80.0" prefWidth="200.0" style="-fx-background-radius: 50; -fx-background-color: #2e2e2e;">
+            <StackPane maxHeight="80.0" maxWidth="1.7976931348623157E308" prefHeight="80.0" prefWidth="200.0" style="-fx-background-radius: 50; -fx-background-color: #16ff9e;">
                <effect>
-                  <DropShadow height="5.0" radius="2.0" width="5.0">
+                  <DropShadow height="93.49" radius="46.3375" width="93.86">
                      <color>
-                        <Color opacity="0.4675324559211731" />
+                        <Color red="0.06120000034570694" green="0.36000001430511475" blue="0.20562000572681427" />
                      </color>
                   </DropShadow>
                </effect>
@@ -186,11 +186,11 @@
                   <Insets left="10.0" right="10.0" />
                </padding>
             </StackPane>
-            <StackPane maxHeight="80.0" maxWidth="1.7976931348623157E308" prefHeight="80.0" prefWidth="200.0" style="-fx-background-radius: 50; -fx-background-color: #2e2e2e;">
+            <StackPane maxHeight="80.0" maxWidth="1.7976931348623157E308" prefHeight="80.0" prefWidth="200.0" style="-fx-background-radius: 50; -fx-background-color: #16ff9e;">
                <effect>
-                  <DropShadow height="5.0" radius="2.0" width="5.0">
+                  <DropShadow height="93.49" radius="46.3375" width="93.86">
                      <color>
-                        <Color opacity="0.4675324559211731" />
+                        <Color red="0.06120000034570694" green="0.36000001430511475" blue="0.20562000572681427" />
                      </color>
                   </DropShadow>
                </effect>
@@ -219,18 +219,18 @@
             </DropShadow>
          </effect>
       </StackPane>
-      <TabPane fx:id="tabPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #323232; -fx-border-width: 1 0 0 0; -fx-border-color: #555555;" stylesheets="@../../../../stylesheet/style.css" tabClosingPolicy="UNAVAILABLE">
+      <TabPane fx:id="tabPane" prefHeight="200.0" prefWidth="200.0" stylesheets="@../../../../stylesheet/style_light.css" tabClosingPolicy="UNAVAILABLE">
          <tabs>
             <Tab closable="false" text="Today Remaining">
                <content>
                   <StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="291.0" prefWidth="717.0">
                      <children>
-                        <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" pannable="true" style="-fx-border-color: none;">
+                        <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" pannable="true" style="-fx-background-color: #CDC9C9;">
                            <padding>
                               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                            </padding>
                            <content>
-                              <TilePane fx:id="tilePane" hgap="10.0" maxHeight="1.7976931348623157E308" prefWidth="780.0" style="-fx-background-color: #323232;" vgap="10.0">
+                              <TilePane fx:id="tilePane" hgap="10.0" maxHeight="1.7976931348623157E308" prefWidth="780.0" style="-fx-background-color: #CDC9C9;" vgap="10.0">
                                  <padding>
                                     <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                  </padding>
@@ -245,12 +245,12 @@
                <content>
                   <StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="500.0">
                      <children>
-                        <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" pannable="true" prefHeight="500.0" style="-fx-border-color: none;">
+                        <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" pannable="true" prefHeight="500.0" style="-fx-background-color: #CDC9C9;">
                            <padding>
                               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                            </padding>
                            <content>
-                              <TilePane fx:id="tilePane1" hgap="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #323232;" vgap="10.0">
+                              <TilePane fx:id="tilePane1" hgap="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #CDC9C9;" vgap="10.0">
                                  <padding>
                                     <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                  </padding>

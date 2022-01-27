@@ -132,7 +132,6 @@ public class dashboardController {
         dout.flush();
 
         boolean c = din.readBoolean();
-
         if(c){
             String st = din.readUTF();
             while(!st.equals("S")){
@@ -148,11 +147,11 @@ public class dashboardController {
                             pane.setDisable(true);
                         }
                         pane.setOnMouseEntered(
-                                mouseEvent -> pane.setStyle("-fx-background-color: #403434;-fx-background-radius: 10px;-fx-border-radius: 10px")
+                                mouseEvent -> pane.setStyle("-fx-background-color: #a0a0a0;-fx-background-radius: 10px;-fx-border-radius: 10px")
                         );
 
                         pane.setOnMouseExited(
-                                mouseEvent -> pane.setStyle("-fx-background-color: #3d3d3d;-fx-background-radius: 10px;-fx-border-radius: 10px")
+                                mouseEvent -> pane.setStyle("-fx-background-color: #b3b3b3;-fx-background-radius: 10px;-fx-border-radius: 10px")
                         );
 
                         pane.setOnMouseClicked(
@@ -169,15 +168,11 @@ public class dashboardController {
             );
 
         }else{
+            din.readUTF();
             Label label = new Label("No Appointments For Today Yet.");
             label.wrapTextProperty().setValue(true);
             appointmentsPane.getChildren().add(label);
         }
-
-
-
-
-
 
     }
 

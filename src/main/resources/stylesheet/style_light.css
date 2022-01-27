@@ -1,0 +1,89 @@
+.button{
+    -fx-border-style: none;
+    -fx-background-color: #3801ff;
+    -fx-text-fill: whitesmoke;
+}
+
+.button:hover{
+    -fx-background-color: #19006d;
+    -fx-text-fill: aqua;
+}
+
+.button:pressed {
+    -fx-border-style: solid;
+    -fx-border-color: #013223;
+    -fx-effect: none;
+    -fx-text-fill: #1bc7c7;
+    -fx-border-radius: 3px;
+}
+
+.text-field{
+    -fx-prompt-text-fill: rgb(56, 55, 55);
+    -fx-background-color: transparent;
+    -fx-border-color: #a1a1a1;
+    -fx-border-width: 0px 0px 1px 0px;
+    -fx-text-fill: #313131;
+}
+
+.text-field:focused{
+    -fx-border-color: aqua;
+}
+
+.text-field:hover{
+    -fx-prompt-text-fill: white;
+    -fx-effect: none;
+    -fx-background-color: rgba(109, 109, 109, 0.45);
+}
+
+.combo-box-base:hover{
+    -fx-background-color: #403434;
+
+}
+
+#noLogOutBtn:hover{
+    -fx-text-fill: aqua;
+
+}
+
+#noLogOutBtn:pressed{
+    -fx-effect: none;
+}
+
+.tab-pane{
+    -fx-padding: 0 -1 -1 -1;
+}
+
+.tab-pane, .tab-header-area, .tab-header-background {
+    -fx-background-color:transparent;
+
+}
+
+.tab-pane .tab:hover{
+    -fx-background-color: #e2dfdf;
+}
+
+.tab-pane .tab:selected{
+    -fx-background-color: #cdc9c9;
+
+}
+
+.tab-pane .tab-label{
+    -fx-text-fill: #232323;
+    -fx-label-padding: 2;
+}
+
+.tab-pane .tab-label:hover{
+    -fx-text-fill: #005c5c;
+}
+
+.tab-pane .tab {
+    -fx-background-color: #ffffff;
+}
+
+.tab-pane:focused > .tab-header-area > .headers-region > .tab:selected .focus-indicator {
+    -fx-border-color: transparent;
+}
+
+.tab-pane .tab-header-area .tab-down-button{
+    visibility: false;
+}

@@ -1,5 +1,6 @@
 package com.ospitality.client.admin;
 
+import com.jfoenix.controls.JFXDatePicker;
 import com.ospitality.client.common;
 import com.ospitality.client.user;
 import javafx.collections.FXCollections;
@@ -29,9 +30,7 @@ import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.*;
 
-
 public class dashboardController {
-
     @FXML
     public BarChart<String,Number> patientsBarChart;
     @FXML
@@ -160,11 +159,9 @@ public class dashboardController {
 
         boolean entries = din.readBoolean();
         if(entries){
-            System.out.println(din.readUTF());
             String str=din.readUTF();
             while(!str.equals("!!")){
                 String[] arr = str.split("\\./");
-                System.out.println(Arrays.toString(arr));
                 Date date = new SimpleDateFormat("yyyy-MM-dd").parse(arr[0]);
                 LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
 

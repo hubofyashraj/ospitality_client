@@ -233,7 +233,6 @@ public class prescriptionController {
         if(pj!=null){
             Printer printer = Printer.getDefaultPrinter();
             PageLayout pageLayout = printer.createPageLayout(Paper.A4, PageOrientation.PORTRAIT,Printer.MarginType.HARDWARE_MINIMUM);
-            PageLayout pageLayout = printer.createPageLayout(Paper.A4, PageOrientation.PORTRAIT,0,0,0,30);
             JobSettings jobSettings = pj.getJobSettings();
             jobSettings.setPrintQuality(PrintQuality.HIGH);
             jobSettings.setPageLayout(pageLayout);
@@ -259,9 +258,6 @@ public class prescriptionController {
         prescription.setPrefWidth(570);
         prescription.setPrefHeight(800);
         prescription.setMaxWidth(570);
-        prescription.setPrefWidth(600);
-        prescription.setPrefHeight(800);
-        prescription.setMaxWidth(600);
         prescription.setMaxHeight(800);
 
 
@@ -346,6 +342,7 @@ public class prescriptionController {
         tablePane.setPrefHeight(430);
         tablePane.setPrefWidth(512);
         tablePane.setPadding(new Insets(0,10,0,10));
+
         TableView<Medicine> tableView = new TableView<>();
         TableColumn<Medicine,String> medicineName = new TableColumn<>("MEDICINE NAME");
         TableColumn<Medicine,String> medicineAdministration = new TableColumn<>("ADMINISTRATION (times/day)");
@@ -358,11 +355,6 @@ public class prescriptionController {
 
         tableView.getColumns().addAll(medicineName,medicineAdministration,medicineTime);
         tableView.setStyle("-fx-vbar-policy: never");
-        medicineName.setMinWidth(240);
-        medicineAdministration.setMinWidth(240);
-        medicineTime.setMinWidth(100);
-
-        tableView.getColumns().addAll(medicineName,medicineAdministration,medicineTime);
 
         medicineName.setCellValueFactory(new PropertyValueFactory<>("name"));
         medicineAdministration.setCellValueFactory(new PropertyValueFactory<>("administration"));

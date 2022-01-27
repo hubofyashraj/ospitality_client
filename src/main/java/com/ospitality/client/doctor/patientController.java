@@ -1,8 +1,13 @@
 package com.ospitality.client.doctor;
 
+import com.jfoenix.controls.JFXDialog;
+import com.jfoenix.controls.JFXDialogLayout;
 import com.jfoenix.controls.JFXSnackbar;
 import com.ospitality.client.common;
 import com.ospitality.client.user;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableArray;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,6 +21,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -23,6 +30,8 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Objects;
 
 import static com.ospitality.client.common.din;
@@ -31,6 +40,8 @@ public class patientController {
 
     static String patID="";
 
+    @FXML
+    public StackPane mainpane;
     @FXML
     public Label patientAge;
     @FXML
@@ -117,20 +128,63 @@ public class patientController {
     }
 
     public void callAssignLabtest() {
-        confermPane.setVisible(true);
+        JFXDialogLayout content = new JFXDialogLayout();
+        Text text = new Text("Select Test From Menu");
+        text.setFill(Color.valueOf("#282331"));
+        content.setHeading(text);
+        ComboBox<String> box = new ComboBox<String>();
+        ObservableList<String> list = FXCollections.observableArrayList(
+                "BMP (Basic Metabolic Panel)" ,
+               "CBC (Complete Blood Count)" ,
+               "CMP (Complete Metabolic Panel)" ,
+               "ESR (Erythrocyte Sedimentation Rate)" ,
+               "Ferritin" ,
+               "FT4 (Free Thyroxine)" ,
+               "FT3 (Free Triiodothyronine)" ,
+               "GC/CHL (Gonorrhea/Chlamydia)" ,
+               "Hemoglobin A1C" ,
+               "HIV (fourth generation test)" ,
+               "Influenza A and B" ,
+               "KOH" ,
+               "Lipid Panel" ,
+               "Manual Differential" ,
+               "Mono (Mononucleosis)" ,
+               "Rapid Strep Test" ,
+               "TSH (Thyroid Stimulating Hormone)" ,
+               "Urinalysis" ,
+               "Urine Culture" ,
+               "Wet Prep" ,
+               "Vitamin B12"
+        );
+        box.setItems(list);
+        content.setBody(new StackPane(box));
+        Button assign = new Button("ASSIGN");
+        content.setActions(assign);
+        JFXDialog dialog = new JFXDialog(mainpane,content, JFXDialog.DialogTransition.BOTTOM);
+        assign.setOnAction(
+                actionEvent -> {
+                    try {
+                        dout.writeUTF("DAL");
+                        dout.writeUTF(patID+"./"+box.getValue());
+                        JFXSnackbar snackbar = new JFXSnackbar((Pane) backBtn.getParent());
+                        snackbar.enqueue(new JFXSnackbar.SnackbarEvent(new Label("Lab-test Assigned "+labtestName.getValue()), Duration.millis(2000)));
+                        confermPane.setVisible(false);
+                        dialog.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
+                }
+        );
+        dialog.show();
     }
 
     public void callAssignIt( ) throws IOException {
-        dout.writeUTF("DAL");
-        dout.writeUTF(patID+"./"+labtestName.getValue());
-        JFXSnackbar snackbar = new JFXSnackbar((Pane) backBtn.getParent());
-        snackbar.enqueue(new JFXSnackbar.SnackbarEvent(new Label("Lab-test Assigned "+labtestName.getValue()), Duration.millis(2000)));
-        confermPane.setVisible(false);
+
     }
 
     public void callDontAssign() {
-        confermPane.setVisible(false);
-        labtestName.setValue(null);
+
     }
 
     public void callMarkVisit() throws IOException {

@@ -17,7 +17,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<StackPane fx:id="mainPane" prefHeight="600.0" prefWidth="800.0" stylesheets="@../../../../stylesheet/style7.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ospitality.client.admin.dashboardController">
+<StackPane fx:id="mainPane" prefHeight="600.0" prefWidth="800.0" stylesheets="@../../../../stylesheet/style7_light.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ospitality.client.admin.dashboardController">
    <StackPane fx:id="navbarStackPane" maxHeight="40.0" prefHeight="40.0" prefWidth="600.0" stylesheets="@../../../../stylesheet/navbar.css" StackPane.alignment="TOP_CENTER">
       <Button fx:id="dashboardBTN" disable="true" minHeight="40.0" mnemonicParsing="false" onAction="#callDashboard" prefHeight="40.0" prefWidth="79.0" style="-fx-border-color: #a1a1a1; -fx-border-width: 0 0 1 0;" text="DashBoard" textFill="#f5f0f0" StackPane.alignment="TOP_LEFT">
          <font>
@@ -128,7 +128,7 @@
                   </DropShadow>
                </effect>
                <HBox.margin>
-                  <Insets top="-20.0" />
+                  <Insets left="-20.0" top="-20.0" />
                </HBox.margin>
                <Label alignment="CENTER" maxWidth="110.0" minWidth="110.0" style="-fx-text-fill: black;" text="DESIGNATION" textAlignment="CENTER" textOverrun="CLIP" underline="true" StackPane.alignment="TOP_CENTER">
                   <effect>

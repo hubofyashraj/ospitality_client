@@ -1,23 +1,31 @@
 package com.ospitality.client;
 
+import com.jfoenix.controls.JFXDialog;
+import com.jfoenix.controls.JFXDialogLayout;
 import com.jfoenix.controls.JFXSnackbar;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import javax.imageio.ImageIO;
+import javax.swing.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
+import java.net.ConnectException;
 import java.net.Socket;
 import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
@@ -30,6 +38,7 @@ public class loginController {
     static String uid="";
     public AnchorPane troublePane;
     public StackPane mainPane;
+    public TextField port;
     String pass="";
 
     @FXML
@@ -60,12 +69,24 @@ public class loginController {
         pass = loginPassField.getText();
         if(uid.length()!=0 && pass.length()!=0){
             try{
-                String ipAddr=ip.getText()==null?"localhost":ip.getText();
+                String ipAddr= Objects.equals(ip.getText(), "") ?"localhost":ip.getText();
                 if(ip.getText()!=null){
                     try(FileOutputStream fos = new FileOutputStream(common.getWorkingDirectory()+"ip")){
                         fos.write(ip.getText().getBytes(StandardCharsets.UTF_8));
                     }
-                }common.setSocket(new Socket(ipAddr,5678));
+                }
+                String portAddr = Objects.equals(port.getText(), "") ?"5678":port.getText();
+
+                try{
+                    common.setSocket(new Socket(ipAddr,Integer.parseInt(portAddr)));
+
+                }catch (ConnectException e){
+                    JFXSnackbar snackbar = new JFXSnackbar(mainPane);
+                    Label l = new Label("Server Not Reachable");
+                    l.setStyle("-fx-text-fill: red");
+                    snackbar.enqueue(new JFXSnackbar.SnackbarEvent(l,Duration.millis(1000)));
+                    return;
+                }
 
                 Socket socket = common.getSocket();
 
@@ -181,5 +202,68 @@ public class loginController {
     public void callHide() {
         troublePane.setVisible(false);
         mainPane.setDisable(false);
+    }
+
+    public void callIPSetting() {
+        JFXDialogLayout content = new JFXDialogLayout();
+        Text text = new Text("Enter Server IP Address. Enter Port Number Also if Server is not local, i.e. Via Tunnel.\nLeave port empty if Server is on local network");
+        text.setFill(Color.valueOf("#282331"));
+        content.setHeading(text);
+        TextField ipAddr = new TextField(ip.getText());
+        Label ipL = new Label("IP");
+        StackPane.setAlignment(ipL, Pos.CENTER_LEFT);
+        StackPane.setMargin(ipL,new Insets(0,0,0,20));
+        Label portL = new Label("PORT");
+        StackPane.setAlignment(portL, Pos.CENTER_LEFT);
+        StackPane.setMargin(portL,new Insets(0,0,0,250));
+        ipAddr.setPromptText("default localhost");
+        ipAddr.setPrefWidth(180);
+        ipAddr.setMaxWidth(180);
+        StackPane.setAlignment(ipAddr, Pos.CENTER_LEFT);
+        StackPane.setMargin(ipAddr,new Insets(0,0,0,40));
+        TextField portAddr = new TextField(port.getText());
+        portAddr.setPrefWidth(160);
+        portAddr.setMaxWidth(160);
+        StackPane.setAlignment(portAddr, Pos.CENTER_LEFT);
+        StackPane.setMargin(portAddr,new Insets(0,0,0,300));
+        StackPane pane = new StackPane(ipL,ipAddr,portL,portAddr);
+        content.setBody(pane);
+        Button save = new Button("SAVE");
+        Button reset = new Button("RESET");
+
+        content.setActions(save,reset);
+
+        JFXDialog dialog = new JFXDialog(mainPane,content, JFXDialog.DialogTransition.CENTER);
+
+        save.setOnAction(
+                actionEvent -> {
+                    if(!Objects.equals(ipAddr.getText(), "")){
+                        ip.setText(ipAddr.getText());
+                        if(!Objects.equals(portAddr.getText(), "")){
+                            port.setText(portAddr.getText());
+                        }
+
+                    }
+                    dialog.close();
+
+                    JFXSnackbar snackbar = new JFXSnackbar(mainPane);
+                    snackbar.enqueue(new JFXSnackbar.SnackbarEvent(new Label("IP Settings Saved Successfully")));
+                }
+        );
+
+        reset.setOnAction(
+                actionEvent -> {
+                    ip.setText("");
+                    ipAddr.setText("");
+                    port.setText("");
+                    portAddr.setText("");
+
+                    dialog.close();
+                    JFXSnackbar snackbar = new JFXSnackbar(mainPane);
+                    snackbar.enqueue(new JFXSnackbar.SnackbarEvent(new Label("IP Settings Reset Successful")));
+                }
+        );
+
+        dialog.show();
     }
 }

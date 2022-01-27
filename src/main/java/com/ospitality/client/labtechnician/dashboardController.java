@@ -152,11 +152,11 @@ public class dashboardController {
 
                         tilePane.getChildren().add(0, anchorPane);
                         anchorPane.setOnMouseEntered(
-                                mouseEvent -> anchorPane.setStyle("-fx-background-color: #403434;-fx-background-radius: 10px;-fx-border-radius: 10px")
+                                mouseEvent -> anchorPane.setStyle("-fx-background-color: #939393;-fx-background-radius: 10px;-fx-border-radius: 10px")
                         );
 
                         anchorPane.setOnMouseExited(
-                                mouseEvent -> anchorPane.setStyle("-fx-background-color: #3d3d3d;-fx-background-radius: 10px;-fx-border-radius: 10px")
+                                mouseEvent -> anchorPane.setStyle("-fx-background-color: #b3b3b3;-fx-background-radius: 10px;-fx-border-radius: 10px")
                         );
 
                         anchorPane.setOnMouseClicked(

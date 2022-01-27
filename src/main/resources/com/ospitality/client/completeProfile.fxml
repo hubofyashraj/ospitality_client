@@ -8,53 +8,47 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.effect.Reflection?>
 <?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<StackPane prefHeight="600.0" prefWidth="800.0" stylesheets="@../../../stylesheet/style7.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ospitality.client.completeProfileController">
+<StackPane prefHeight="600.0" prefWidth="800.0" stylesheets="@../../../stylesheet/style7_light.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ospitality.client.completeProfileController">
    <Label text="welcome , " StackPane.alignment="TOP_LEFT">
       <font>
-         <Font size="18.0" />
+         <Font name="Segoe Print" size="24.0" />
       </font>
       <StackPane.margin>
          <Insets left="20.0" top="20.0" />
       </StackPane.margin>
    </Label>
-   <Label fx:id="NameUser" text="userName" StackPane.alignment="TOP_LEFT">
-      <font>
-         <Font size="18.0" />
-      </font>
-      <StackPane.margin>
-         <Insets left="120.0" top="20.0" />
-      </StackPane.margin>
-   </Label>
    <Label text="User ID" StackPane.alignment="TOP_RIGHT">
       <font>
-         <Font size="18.0" />
+         <Font name="Segoe Print" size="18.0" />
       </font>
       <StackPane.margin>
-         <Insets right="120.0" top="20.0" />
+         <Insets right="150.0" top="20.0" />
       </StackPane.margin>
    </Label>
    <Label fx:id="UID" text="ADM1001" StackPane.alignment="TOP_RIGHT">
       <font>
-         <Font size="18.0" />
+         <Font name="Segoe Print" size="18.0" />
       </font>
       <StackPane.margin>
          <Insets right="20.0" top="20.0" />
       </StackPane.margin>
    </Label>
-   <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="400.0" style="-fx-background-color: #2b2b2b; -fx-background-radius: 25;">
+   <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="436.0" prefWidth="400.0" style="-fx-background-radius: 25; -fx-background-color: #CDC9C9;">
       <StackPane.margin>
          <Insets />
       </StackPane.margin>
       <Label text="COMPLETE YOUR PROFILE" StackPane.alignment="TOP_CENTER">
          <font>
-            <Font size="29.0" />
+            <Font name="Segoe Print" size="25.0" />
          </font>
          <StackPane.margin>
-            <Insets top="50.0" />
+            <Insets top="10.0" />
          </StackPane.margin>
          <effect>
             <Reflection topOpacity="0.11" />
@@ -139,10 +133,25 @@
             <Insets top="370.0" />
          </StackPane.margin>
       </Button>
+      <effect>
+         <DropShadow>
+            <color>
+               <Color red="0.43421053886413574" green="0.43421053886413574" blue="0.43421053886413574" />
+            </color>
+         </DropShadow>
+      </effect>
    </StackPane>
    <Label fx:id="errorphno" style="-fx-text-fill: red;" textFill="RED">
       <StackPane.margin>
          <Insets left="350.0" top="100.0" />
+      </StackPane.margin>
+   </Label>
+   <Label fx:id="NameUser" text="userName" StackPane.alignment="TOP_LEFT">
+      <font>
+         <Font name="Segoe Print" size="24.0" />
+      </font>
+      <StackPane.margin>
+         <Insets left="160.0" top="20.0" />
       </StackPane.margin>
    </Label>
 </StackPane>

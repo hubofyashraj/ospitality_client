@@ -2,6 +2,8 @@ package com.ospitality.client;
 
 import com.jfoenix.controls.JFXDialog;
 import com.jfoenix.controls.JFXDialogLayout;
+import com.jfoenix.controls.JFXSnackbar;
+import com.jfoenix.controls.JFXSnackbarLayout;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -20,6 +22,7 @@ import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import javafx.util.Duration;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -184,9 +187,9 @@ public class common {
 
         visited1.setWrapText(true);
 
-        name1.setStyle("-fx-pref-width: 130; -fx-text-fill: #a1a1a1; ");
-        id1.setStyle("-fx-pref-width: 130; -fx-text-fill: #a1a1a1; ");
-        visited1.setStyle("-fx-pref-width: 130; -fx-text-fill: #a1a1a1; ");
+        name1.setStyle("-fx-pref-width: 130; -fx-text-fill: #2d2d2d; ");
+        id1.setStyle("-fx-pref-width: 130; -fx-text-fill: #2d2d2d; ");
+        visited1.setStyle("-fx-pref-width: 130; -fx-text-fill: #2d2d2d; ");
 
         name1.setAlignment(Pos.CENTER);
         id1.setAlignment(Pos.CENTER);
@@ -211,8 +214,8 @@ public class common {
         AnchorPane pane = new AnchorPane(name1,id1,visited1);
         pane.setMinWidth(140);
         pane.setMinHeight(70);
-        pane.setBackground(new Background(new BackgroundFill(new Color(0.24,0.24,0.24,1), new CornerRadii(10), EMPTY)));
-        pane.setStyle("-fx-background-color: #3d3d3d");
+        pane.setBackground(new Background(new BackgroundFill(new Color(0.7,0.7,0.7,1), new CornerRadii(10), EMPTY)));
+        pane.setStyle("-fx-background-color: #b4b4b4");
         seTeffect(pane);
         pane.setStyle("-fx-border-radius: 10px");
         return pane;
@@ -260,7 +263,7 @@ public class common {
         AnchorPane.setRightAnchor(name1,0.0);
         AnchorPane.setRightAnchor(role1,0.0);
 
-        pane.setBackground(new Background(new BackgroundFill(new Color(0.24,0.24,0.24,1), new CornerRadii(10), EMPTY)));
+        pane.setBackground(new Background(new BackgroundFill(new Color(0.7,0.7,0.7,1), new CornerRadii(10), EMPTY)));
 
         seTeffect(pane);
 
@@ -281,7 +284,7 @@ public class common {
         pane.setMinWidth(160);
         pane.setPrefWidth(160);
 
-        pane.setStyle("-fx-background-color: #323232; -fx-border-radius: 10px; -fx-background-radius: 10px");
+        pane.setStyle("-fx-background-color: #b4b4b4; -fx-border-radius: 10px; -fx-background-radius: 10px");
         seTeffect(pane);
         pane.getChildren().get(0).setLayoutY(75);
         pane.getChildren().get(1).setLayoutY(90);
@@ -379,7 +382,7 @@ public class common {
     public static void logout(StackPane mainpane) {
         JFXDialogLayout content = new JFXDialogLayout();
         Text text = new Text("click LOGOUT if sure or click anywhere on screen ");
-        text.setFill(Color.WHITESMOKE);
+        text.setFill(Color.valueOf("#282331"));
         content.setHeading(text);
 
         Button logout = new Button("LOGOUT");
@@ -387,13 +390,19 @@ public class common {
         JFXDialog dialog = new JFXDialog(mainpane,content, JFXDialog.DialogTransition.BOTTOM);
         logout.setOnAction(
                 actionEvent -> {
-                    try{
-                        DataOutputStream dout = common.getDout();
+                    dialog.close();
 
+
+                    DataOutputStream dout = common.getDout();
+                    try {
                         dout.writeUTF("LOGOUT");
-
                         common.getSocket().close();
+                    } catch (IOException e) {
+                        JFXSnackbar snackbar = new JFXSnackbar(mainpane);
+                        snackbar.enqueue(new JFXSnackbar.SnackbarEvent(new Label("Server Connection Lost... Logging Out"), Duration.millis(3000)));
+                    }
 
+                    try{
                         Stage stage = common.mainStage;
                         Parent root = FXMLLoader.load(Objects.requireNonNull(common.class.getResource("login.fxml")));
                         Scene sc = stage.getScene();
@@ -402,7 +411,6 @@ public class common {
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                    dialog.close();
                 }
         );
         dialog.show();

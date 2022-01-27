@@ -185,8 +185,8 @@ public class accountsManagementController {
                                 }
                             }
                     );
-                    pane.setOnMouseEntered(mouseEvent -> pane.setStyle("-fx-background-color: #403434;-fx-background-radius: 10px;-fx-border-radius: 10px"));
-                    pane.setOnMouseExited(mouseEvent -> pane.setStyle("-fx-background-color: #3d3d3d;-fx-background-radius: 10px;-fx-border-radius: 10px"));
+                    pane.setOnMouseEntered(mouseEvent -> pane.setStyle("-fx-background-color: #909090;-fx-background-radius: 10px;-fx-border-radius: 10px"));
+                    pane.setOnMouseExited(mouseEvent -> pane.setStyle("-fx-background-color: #b4b4b4;-fx-background-radius: 10px;-fx-border-radius: 10px"));
                     tilePane.getChildren().add(pane);
                 } catch (URISyntaxException e) {
                     e.printStackTrace();
@@ -247,49 +247,56 @@ public class accountsManagementController {
         String pass = two_pass.getText();
         String confPass = two_passconf.getText();
 
-        if(pass.equals(confPass)){
-            passnotmatch.setText("");
-            try {
+        if (userName.length()>0 && job.length()>0 && emailAddress.length()>0 && pass.length()>0 && confPass.length()>0){
+            if(pass.equals(confPass)){
+                passnotmatch.setText("");
+                try {
 
-                String test = String.format("%s./%s./%s./%s./%s",
-                        userName, job, emailAddress, pass, departmentCB.getValue());
+                    String test = String.format("%s./%s./%s./%s./%s",
+                            userName, job, emailAddress, pass, departmentCB.getValue());
 
-                dout.writeUTF("AAU");
-                dout.writeUTF(test);
+                    dout.writeUTF("AAU");
+                    dout.writeUTF(test);
 
-                boolean status = din.readBoolean();
+                    boolean status = din.readBoolean();
 
-                String userAddedGreet;
-                if(status){
-                    userAddedGreet = String.format("User Account for %s has been created.\nUSER ID : %s\nPASSWORD : %s", userName, din.readUTF(), confPass);
-                    result.setText(userAddedGreet);
-                    result.setStyle("-fx-text-fill: green;");
-                    jfxSnackbar.enqueue(new JFXSnackbar.SnackbarEvent(result, Duration.millis(10000)));
-                    initialize();
-                }else{
-                    userAddedGreet = "Can't Create User Account !!!";
-                    result.setText(userAddedGreet);
-                    result.setStyle("-fx-text-fill: red;");
-                    jfxSnackbar.enqueue(new JFXSnackbar.SnackbarEvent(result, Duration.millis(1000)));
+                    String userAddedGreet;
+                    if(status){
+                        userAddedGreet = String.format("User Account for %s has been created.\nUSER ID : %s\nPASSWORD : %s", userName, din.readUTF(), confPass);
+                        result.setText(userAddedGreet);
+                        result.setStyle("-fx-text-fill: green;");
+                        jfxSnackbar.enqueue(new JFXSnackbar.SnackbarEvent(result, Duration.millis(10000)));
+                        initialize();
+                    }else{
+                        userAddedGreet = "Can't Create User Account !!!";
+                        result.setText(userAddedGreet);
+                        result.setStyle("-fx-text-fill: red;");
+                        jfxSnackbar.enqueue(new JFXSnackbar.SnackbarEvent(result, Duration.millis(1000)));
+                    }
+                    Name.setText("");
+                    jobChoice.setValue(null);
+                    jobChoice.setPromptText("Select Role");
+                    departmentCB.setValue(null);
+                    departmentCB.setPromptText("Select Expertise");
+                    email.setText("");
+                    two_pass.setText("");
+                    two_passconf.setText("");
+
+                } catch (IOException | URISyntaxException e) {
+                    e.printStackTrace();
                 }
-                Name.setText("");
-                jobChoice.setValue(null);
-                jobChoice.setPromptText("Select Role");
-                departmentCB.setValue(null);
-                departmentCB.setPromptText("Select Expertise");
-                email.setText("");
-                two_pass.setText("");
-                two_passconf.setText("");
-
-            } catch (IOException | URISyntaxException e) {
-                e.printStackTrace();
+            }else{
+                result.setText("passwords don't match!!!");
+                result.setStyle("-fx-text-fill: red;");
+                jfxSnackbar.enqueue(new JFXSnackbar.SnackbarEvent(result, Duration.millis(1000)));
+                passnotmatch.setText("");
             }
         }else{
-            result.setText("passwords don't match!!!");
+            result.setText("Fill All Details!!");
             result.setStyle("-fx-text-fill: red;");
             jfxSnackbar.enqueue(new JFXSnackbar.SnackbarEvent(result, Duration.millis(1000)));
-            passnotmatch.setText("");
         }
+
     }
 
     public void callCheckRole() {
@@ -335,7 +342,7 @@ public class accountsManagementController {
         JFXDialogLayout content = new JFXDialogLayout();
         content.getStylesheets().add(mainpane.getStylesheets().get(0));
         Text text = new Text("Give a short reason");
-        text.setFill(Color.WHITE);
+        text.setFill(Color.valueOf("#282331"));
         content.setHeading(text);
         TextArea reason = new TextArea();
         content.setBody(reason);
@@ -399,7 +406,7 @@ public class accountsManagementController {
             genderCB.setDisable(false);
             roleCB.setDisable(false);
 
-            image = new Image(Objects.requireNonNull(getClass().getResource("/icons/unlockDark.png")).toURI().toString());
+            image = new Image(Objects.requireNonNull(getClass().getResource("/icons/unlock.png")).toURI().toString());
 
         }else{
             addressTxt.setDisable(true);
@@ -411,7 +418,7 @@ public class accountsManagementController {
             genderCB.setDisable(true);
             roleCB.setDisable(true);
 
-            image = new Image(Objects.requireNonNull(getClass().getResource("/icons/lockDark.png")).toURI().toString());
+            image = new Image(Objects.requireNonNull(getClass().getResource("/icons/lock.png")).toURI().toString());
         }
         lockImg.setImage(image);
 
@@ -422,7 +429,7 @@ public class accountsManagementController {
     void callSave( ) {
         JFXDialogLayout content = new JFXDialogLayout();
         Text text = new Text("Press Yes to save or No to cancel");
-        text.setFill(Color.WHITE);
+        text.setFill(Color.valueOf("#282331"));
         content.setHeading(text);
         Button yes = new Button("Yes");
         Button no = new Button("No");
@@ -538,7 +545,7 @@ public class accountsManagementController {
         genderCB.setDisable(true);
         roleCB.setDisable(true);
 
-        image = new Image(Objects.requireNonNull(getClass().getResource("/icons/lockDark.png")).toURI().toString());
+        image = new Image(Objects.requireNonNull(getClass().getResource("/icons/lock.png")).toURI().toString());
 
         lockImg.setImage(image);
 
@@ -549,7 +556,7 @@ public class accountsManagementController {
         JFXDialogLayout content = new JFXDialogLayout();
         content.getStylesheets().add(mainpane.getStylesheets().get(0));
         Text text = new Text("Give a short reason");
-        text.setFill(Color.WHITE);
+        text.setFill(Color.valueOf("#282331"));
         content.setHeading(text);
         TextArea reason = new TextArea();
         content.setBody(reason);

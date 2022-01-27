@@ -1,0 +1,87 @@
+.text-field{
+    -fx-prompt-text-fill: rgb(109, 109, 109);
+    -fx-background-color: transparent;
+    -fx-border-color: #a1a1a1;
+    -fx-border-width: 0px 0px 1px 0px;
+    -fx-text-fill: #313131;
+}
+
+.text-field:focused{
+    -fx-border-color: aqua;
+}
+
+.text-field:hover{
+    -fx-prompt-text-fill: white;
+    -fx-effect: none;
+    -fx-background-color: rgba(109, 109, 109, 0.45);
+}
+
+#addressTxt{
+}
+
+.text-area{
+    -fx-text-fill: #000000;
+    -fx-control-inner-background: #dedede;
+}
+
+.text-area:hover{
+    -fx-control-inner-background: #9a9a9a;
+}
+
+
+.list-view{
+    -fx-background-color: inherit;
+    -fx-border-color: #464546;
+
+}
+
+.list-cell:odd{
+    -fx-background-color: transparent;
+    -fx-text-fill: #000000;
+}
+
+.list-cell:even{
+    -fx-background-color: transparent;
+    -fx-text-fill: #000000;
+}
+
+.root{
+    -fx-background-color: #ffffff;
+
+}
+
+#cancel:hover{
+    -fx-text-fill: aqua;
+}
+
+.split-pane{
+    -fx-background-color: #3b3b3b;
+}
+
+.label{
+    -fx-text-fill: whitesmoke;
+}
+
+.button{
+    -fx-border-style: none;
+    -fx-background-color: #464546;
+    -fx-text-fill: whitesmoke;
+    -fx-effect: dropshadow(three-pass-box, #000000, 10, 0, 0, 0);
+}
+
+.button:hover{
+    -fx-background-color: #403434;
+    -fx-text-fill: aqua;
+}
+
+.button:pressed {
+    -fx-border-style: solid;
+    -fx-border-color: #013223;
+    -fx-effect: none;
+    -fx-text-fill: #124242;
+    -fx-border-radius: 3px;
+}
+
+.date-picker .label{
+    -fx-text-fill: black;
+}
