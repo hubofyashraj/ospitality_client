@@ -21,7 +21,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<StackPane fx:id="mainpane" prefHeight="600.0" prefWidth="800.0" stylesheets="@../../../../stylesheet/style7_light.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ospitality.client.admin.accountsManagementController">
+<StackPane fx:id="mainpane" prefHeight="600.0" prefWidth="800.0" stylesheets="@../../../../stylesheet/style7.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ospitality.client.admin.accountsManagementController">
     <StackPane fx:id="navbarStackPane" maxHeight="40.0" prefHeight="40.0" prefWidth="600.0" stylesheets="@../../../../stylesheet/navbar.css" StackPane.alignment="TOP_CENTER">
         <Button fx:id="dashboardBTN" minHeight="40.0" mnemonicParsing="false" onAction="#callDashboard" prefHeight="40.0" prefWidth="79.0" text="DashBoard" textFill="WHITE" StackPane.alignment="TOP_LEFT">
             <font>
@@ -96,7 +96,7 @@
             <Insets top="40.0" />
         </StackPane.margin>
         <Tab text="Add User">
-            <StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: #CDC9C9;" stylesheets="@../../../../stylesheet/style7_light.css">
+            <StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" stylesheets="@../../../../stylesheet/style7.css">
                 <Label fx:id="userAddedTxt" textFill="#09c305" StackPane.alignment="TOP_CENTER">
                 <StackPane.margin>
                     <Insets top="10.0" />
@@ -164,11 +164,11 @@
                     </StackPane.margin>
                     <items>
                         <FXCollections fx:factory="observableArrayList">
-                            <String fx:value="Admin" />
-                            <String fx:value="Receptionist" />
-                            <String fx:value="Doctor" />
-                            <String fx:value="Lab Technician" />
-                            <String fx:value="Medical Storekeeper" />
+                            <String fx:value="ADMIN" />
+                            <String fx:value="RECEPTIONIST" />
+                            <String fx:value="DOCTOR" />
+                            <String fx:value="LAB TECHNICIAN" />
+                            <String fx:value="MEDICAL STOREKEEPER" />
                         </FXCollections>
                     </items>
                 </ComboBox>
@@ -226,7 +226,7 @@
             </StackPane>
         </Tab>
         <Tab text="Modify User">
-            <StackPane fx:id="mainPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: #CDC9C9;" stylesheets="@../../../../stylesheet/style7_light.css">
+            <StackPane fx:id="mainPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"  stylesheets="@../../../../stylesheet/style7.css">
                 <TextField fx:id="userIDTxt" maxWidth="175.0" minWidth="175.0" prefHeight="40.0" prefWidth="175.0" promptText="User ID" StackPane.alignment="TOP_CENTER">
                     <StackPane.margin>
                         <Insets right="20.0" top="15.0" />
@@ -237,11 +237,11 @@
                         <Insets left="250.0" top="25.0" />
                     </StackPane.margin>
                 </Button>
-                <ScrollPane fx:id="scrollPane" fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" pannable="true" stylesheets="@../../../../stylesheet/style7_light.css" StackPane.alignment="CENTER">
+                <ScrollPane fx:id="scrollPane" fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" pannable="true" stylesheets="@../../../../stylesheet/style7.css" StackPane.alignment="CENTER">
                     <StackPane.margin>
                         <Insets bottom="25.0" left="25.0" right="25.0" top="70.0" />
                     </StackPane.margin>
-                    <TilePane fx:id="tilePane" hgap="15.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: #CDC9C9;" vgap="15.0">
+                    <TilePane fx:id="tilePane" hgap="15.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" vgap="15.0">
                         <padding>
                             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                         </padding>
@@ -254,7 +254,7 @@
                         </effect>
                     </TilePane>
                 </ScrollPane>
-                <StackPane fx:id="detailsPane" stylesheets="@../../../../stylesheet/style7_light.css" visible="false">
+                <StackPane fx:id="detailsPane" stylesheets="@../../../../stylesheet/style7.css" visible="false">
                     <StackPane.margin>
                         <Insets bottom="25.0" left="25.0" right="25.0" top="70.0" />
                     </StackPane.margin>
@@ -314,28 +314,28 @@
                         </StackPane.margin>
                         <Image url="@../../../../icons/lock.png" />
                     </ImageView>
-                    <ComboBox fx:id="roleCB" disable="true" editable="true" prefHeight="40.0" prefWidth="200.0" stylesheets="@../../../../stylesheet/style7_light.css" StackPane.alignment="CENTER_LEFT">
+                    <ComboBox fx:id="roleCB" disable="true" editable="true" prefHeight="40.0" prefWidth="200.0" stylesheets="@../../../../stylesheet/style7.css" StackPane.alignment="CENTER_LEFT">
                         <StackPane.margin>
                             <Insets bottom="90.0" left="150.0" />
                         </StackPane.margin>
                         <items>
                             <FXCollections fx:factory="observableArrayList">
-                                <String fx:value="Admin" />
-                                <String fx:value="Receptionist" />
-                                <String fx:value="Doctor" />
-                                <String fx:value="Lab Technician" />
-                                <String fx:value="Medical Storekeeper" />
+                                <String fx:value="ADMIN" />
+                                <String fx:value="RECEPTIONIST" />
+                                <String fx:value="DOCTOR" />
+                                <String fx:value="LAB TECHNICIAN" />
+                                <String fx:value="MEDICAL STOREKEEPER" />
                             </FXCollections>
                         </items>
                     </ComboBox>
-                    <ComboBox fx:id="genderCB" disable="true" editable="true" layoutX="410.0" layoutY="235.0" prefHeight="40.0" prefWidth="200.0" stylesheets="@../../../../stylesheet/style7_light.css" StackPane.alignment="CENTER_LEFT">
+                    <ComboBox fx:id="genderCB" disable="true" editable="true" layoutX="410.0" layoutY="235.0" prefHeight="40.0" prefWidth="200.0" stylesheets="@../../../../stylesheet/style7.css" StackPane.alignment="CENTER_LEFT">
                         <StackPane.margin>
                             <Insets bottom="240.0" left="450.0" />
                         </StackPane.margin>
                         <items>
                             <FXCollections fx:factory="observableArrayList">
-                                <String fx:value="Male" />
-                                <String fx:value="Female" />
+                                <String fx:value="MALE" />
+                                <String fx:value="FEMALE" />
                             </FXCollections>
                         </items>
                     </ComboBox>

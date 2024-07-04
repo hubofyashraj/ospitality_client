@@ -24,7 +24,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<StackPane fx:id="mainpane" prefHeight="600.0" prefWidth="800.0" stylesheets="@../../../../stylesheet/style7_light.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ospitality.client.receptionist.appointmentController">
+<StackPane fx:id="mainpane" prefHeight="600.0" prefWidth="800.0" stylesheets="@../../../../stylesheet/style7.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ospitality.client.receptionist.appointmentController">
     <StackPane fx:id="navbarStackPane" maxHeight="40.0" prefHeight="40.0" prefWidth="600.0" stylesheets="@../../../../stylesheet/navbar.css" StackPane.alignment="TOP_CENTER">
         <Button fx:id="appointmentBTN" disable="true" minHeight="25.0" mnemonicParsing="false" onAction="#callAppointment" prefWidth="80.0" style="-fx-border-color: #a1a1a1; -fx-border-width: 0 0 1 0;" text="Appointment" StackPane.alignment="TOP_LEFT">
             <font>
@@ -94,12 +94,12 @@
 </tooltip>
         </Button>
     </StackPane>
-    <TabPane fx:id="tabPane" prefHeight="200.0" prefWidth="200.0" stylesheets="@../../../../stylesheet/style7_light.css" tabClosingPolicy="UNAVAILABLE">
+    <TabPane fx:id="tabPane" prefHeight="200.0" prefWidth="200.0" stylesheets="@../../../../stylesheet/style7.css" tabClosingPolicy="UNAVAILABLE">
         <StackPane.margin>
             <Insets top="40.0" />
         </StackPane.margin>
         <Tab text="New Appointment">
-            <StackPane fx:id="newAppointmentTab" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="500.0" prefWidth="600.0" style="-fx-background-color: #CDC9C9;" stylesheets="@../../../../stylesheet/style7_light.css">
+            <StackPane fx:id="newAppointmentTab" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="500.0" prefWidth="600.0" style="-fx-background-color: #CDC9C9;" stylesheets="@../../../../stylesheet/style7.css">
                 <Label prefHeight="17.0" prefWidth="160.0" text="Patient ID" StackPane.alignment="CENTER_RIGHT">
                     <StackPane.margin>
                         <Insets bottom="210.0" right="240.0" />
@@ -187,7 +187,7 @@
                   <Insets />
                </opaqueInsets>
                 </Label>
-                <AnchorPane fx:id="datePicker1" maxHeight="40.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="300.0" stylesheets="@../../../../stylesheet/style7_light.css" StackPane.alignment="CENTER_RIGHT">
+                <AnchorPane fx:id="datePicker1" maxHeight="40.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="300.0" stylesheets="@../../../../stylesheet/style7.css" StackPane.alignment="CENTER_RIGHT">
                     <StackPane.margin>
                         <Insets right="100.0" />
                     </StackPane.margin>
@@ -617,7 +617,7 @@
             </StackPane>
         </Tab>
         <Tab text="Modify Appointment">
-            <StackPane fx:id="modifyAppointmentTab" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" style="-fx-background-color: #CDC9C9;" stylesheets="@../../../../stylesheet/style7_light.css">
+            <StackPane fx:id="modifyAppointmentTab" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" style="-fx-background-color: #CDC9C9;" stylesheets="@../../../../stylesheet/style7.css">
                 <TextField fx:id="patientIDTxt" maxWidth="300.0" minWidth="100.0" promptText="Enter Patient ID" StackPane.alignment="TOP_CENTER">
                     <StackPane.margin>
                         <Insets top="40.0" />
@@ -633,7 +633,7 @@
                         <Insets bottom="80.0" left="20.0" right="20.0" top="100.0" />
                     </StackPane.margin>
                     <AnchorPane maxWidth="230.0" prefHeight="200.0" prefWidth="230.0" style="-fx-border-color: #3801ff; -fx-border-width: 0 3px 0 3px;" StackPane.alignment="CENTER_LEFT">
-                        <ListView fx:id="appointmentList" editable="true" layoutX="8.0" layoutY="-12.0" maxWidth="1.7976931348623157E308" onMouseClicked="#callGetAppointment" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: #3801ff; -fx-border-width: 3px 0 0 0;" styleClass="list-cell" stylesheets="@../../../../stylesheet/style3_light.css" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="50.0" />
+                        <ListView fx:id="appointmentList" editable="true" layoutX="8.0" layoutY="-12.0" maxWidth="1.7976931348623157E308" onMouseClicked="#callGetAppointment" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: #3801ff; -fx-border-width: 3px 0 0 0;" styleClass="list-cell" stylesheets="@../../../../stylesheet/style3.css" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="50.0" />
                         <Label fx:id="patientName" alignment="CENTER" layoutX="58.0" layoutY="6.0" text="patientName" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" />
                         <Label alignment="CENTER" layoutX="42.0" layoutY="28.0" text="Appointments List" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" />
                     </AnchorPane>
@@ -665,7 +665,7 @@
                            <Insets top="10.0" />
                         </StackPane.margin>
                      </TextField>
-                          <AnchorPane fx:id="datePicker2" maxHeight="40.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="300.0" stylesheets="@../../../../stylesheet/style7_light.css" StackPane.alignment="CENTER">
+                          <AnchorPane fx:id="datePicker2" maxHeight="40.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="300.0" stylesheets="@../../../../stylesheet/style7.css" StackPane.alignment="CENTER">
                               <StackPane.margin>
                                   <Insets bottom="90.0" />
                               </StackPane.margin>

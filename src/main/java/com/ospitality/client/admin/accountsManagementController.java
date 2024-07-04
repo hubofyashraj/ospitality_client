@@ -185,8 +185,8 @@ public class accountsManagementController {
                                 }
                             }
                     );
-                    pane.setOnMouseEntered(mouseEvent -> pane.setStyle("-fx-background-color: #909090;-fx-background-radius: 10px;-fx-border-radius: 10px"));
-                    pane.setOnMouseExited(mouseEvent -> pane.setStyle("-fx-background-color: #b4b4b4;-fx-background-radius: 10px;-fx-border-radius: 10px"));
+                    pane.setOnMouseEntered(mouseEvent -> pane.setStyle("-fx-background-color: #4D4D4DAA;-fx-background-radius: 10px;-fx-border-radius: 10px"));
+                    pane.setOnMouseExited(mouseEvent -> pane.setStyle("-fx-background-color: #4D4D4DFF;-fx-background-radius: 10px;-fx-border-radius: 10px"));
                     tilePane.getChildren().add(pane);
                 } catch (URISyntaxException e) {
                     e.printStackTrace();

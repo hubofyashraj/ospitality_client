@@ -263,7 +263,7 @@ public class common {
         AnchorPane.setRightAnchor(name1,0.0);
         AnchorPane.setRightAnchor(role1,0.0);
 
-        pane.setBackground(new Background(new BackgroundFill(new Color(0.7,0.7,0.7,1), new CornerRadii(10), EMPTY)));
+        pane.setBackground(new Background(new BackgroundFill(new Color(0.3,0.3,0.3,1), new CornerRadii(10), EMPTY)));
 
         seTeffect(pane);
 

@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@../../../../stylesheet/style7_light.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ospitality.client.labtechnician.testReportController">
+<StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@../../../../stylesheet/style7.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ospitality.client.labtechnician.testReportController">
    <Button fx:id="printReportBTN" mnemonicParsing="false" onAction="#callPrintReport" prefWidth="100.0" text="Print" StackPane.alignment="TOP_RIGHT">
       <StackPane.margin>
          <Insets right="20.0" top="20.0" />

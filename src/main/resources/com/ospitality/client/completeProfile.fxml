@@ -1,20 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.String?>
-<?import javafx.collections.FXCollections?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.Tooltip?>
-<?import javafx.scene.effect.DropShadow?>
-<?import javafx.scene.effect.Reflection?>
-<?import javafx.scene.layout.StackPane?>
-<?import javafx.scene.paint.Color?>
-<?import javafx.scene.text.Font?>
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
 
-<StackPane prefHeight="600.0" prefWidth="800.0" stylesheets="@../../../stylesheet/style7_light.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ospitality.client.completeProfileController">
+<StackPane prefHeight="600.0" prefWidth="800.0" stylesheets="@../../../stylesheet/style7.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ospitality.client.completeProfileController">
    <Label text="welcome , " StackPane.alignment="TOP_LEFT">
       <font>
          <Font name="Segoe Print" size="24.0" />
@@ -39,7 +34,7 @@
          <Insets right="20.0" top="20.0" />
       </StackPane.margin>
    </Label>
-   <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="436.0" prefWidth="400.0" style="-fx-background-radius: 25; -fx-background-color: #CDC9C9;">
+   <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="436.0" prefWidth="400.0" style="-fx-background-radius: 25;">
       <StackPane.margin>
          <Insets />
       </StackPane.margin>
@@ -97,8 +92,8 @@
       <ComboBox fx:id="gendr" editable="true" maxWidth="200.0" prefWidth="200.0">
          <items>
             <FXCollections fx:factory="observableArrayList">
-               <String fx:value="Male" />
-               <String fx:value="Female" />
+               <String fx:value="MALE" />
+               <String fx:value="FEMALE" />
             </FXCollections>
          </items>
          <StackPane.margin>

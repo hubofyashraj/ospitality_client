@@ -29,6 +29,7 @@ import java.net.ConnectException;
 import java.net.Socket;
 import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
 import java.util.Objects;
 
 
@@ -103,6 +104,7 @@ public class loginController {
                 if(access){
                     String input = din.readUTF();
                     String[] details = input.split("\\./");
+                    System.out.println(Arrays.toString(details));
                     user.userName=details[0];
                     user.userID=details[1];
                     user.profileCompleted=details[3].equals("true");
@@ -138,6 +140,8 @@ public class loginController {
                             ImageIO.write(image,"png",profilePic);
 
                         }
+                    }else {
+                        System.out.println("no pp");
                     }
 
                     Stage stage = (Stage)loginbtn.getScene().getWindow();
@@ -164,11 +168,11 @@ public class loginController {
     @FXML
     static void Dashboard(Stage stage) throws Exception{
         String dashboardPath = switch (user.getRole()) {
-            case "Doctor" -> "doctor";
-            case "Admin" -> "admin";
-            case "Receptionist" -> "receptionist";
-            case "Lab Technician" -> "labtechnician";
-            case "Medical Storekeeper" -> "medicalstorekeeper";
+            case "DOCTOR" -> "doctor";
+            case "ADMIN" -> "admin";
+            case "RECEPTIONIST" -> "receptionist";
+            case "LAB TECHNICIAN" -> "labtechnician";
+            case "MEDICAL STOREKEEPER" -> "medicalstorekeeper";
             default -> throw new IllegalStateException("Unexpected value: " + user.getRole());
         };
 

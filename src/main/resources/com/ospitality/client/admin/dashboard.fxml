@@ -1,23 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.chart.BarChart?>
-<?import javafx.scene.chart.CategoryAxis?>
-<?import javafx.scene.chart.NumberAxis?>
-<?import javafx.scene.chart.PieChart?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Tooltip?>
-<?import javafx.scene.effect.DropShadow?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.StackPane?>
-<?import javafx.scene.paint.Color?>
-<?import javafx.scene.text.Font?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
 
-<StackPane fx:id="mainPane" prefHeight="600.0" prefWidth="800.0" stylesheets="@../../../../stylesheet/style7_light.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ospitality.client.admin.dashboardController">
+<StackPane fx:id="mainPane" prefHeight="600.0" prefWidth="800.0" stylesheets="@../../../../stylesheet/style7.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ospitality.client.admin.dashboardController">
    <StackPane fx:id="navbarStackPane" maxHeight="40.0" prefHeight="40.0" prefWidth="600.0" stylesheets="@../../../../stylesheet/navbar.css" StackPane.alignment="TOP_CENTER">
       <Button fx:id="dashboardBTN" disable="true" minHeight="40.0" mnemonicParsing="false" onAction="#callDashboard" prefHeight="40.0" prefWidth="79.0" style="-fx-border-color: #a1a1a1; -fx-border-width: 0 0 1 0;" text="DashBoard" textFill="#f5f0f0" StackPane.alignment="TOP_LEFT">
          <font>
@@ -91,18 +83,59 @@
       <StackPane.margin>
          <Insets top="40.0" />
       </StackPane.margin>
-      <StackPane maxHeight="180.0" prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: #16ff9e;" StackPane.alignment="TOP_CENTER">
+      <HBox maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="200.0" StackPane.alignment="CENTER">
+         <StackPane.margin>
+            <Insets bottom="40.0" left="20.0" right="20.0" top="220.0" />
+         </StackPane.margin>
+         <BarChart fx:id="patientsBarChart" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: #365abf;" stylesheets="@../../../../stylesheet/style4.css" title="Patients Visits" HBox.hgrow="ALWAYS">
+            <xAxis>
+               <CategoryAxis fx:id="barX" side="BOTTOM" tickLabelFill="WHITE" />
+            </xAxis>
+            <yAxis>
+               <NumberAxis fx:id="barY" side="LEFT" tickLabelFill="WHITE" />
+            </yAxis>
+            <HBox.margin>
+               <Insets right="20.0" />
+            </HBox.margin>
+         </BarChart>
+         <PieChart fx:id="genderPieChart" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: #f1e93d;" stylesheets="@../../../../stylesheet/style4.css" title="Patients Ratio (Gender)" HBox.hgrow="ALWAYS">
+            <HBox.margin>
+               <Insets right="20.0" />
+            </HBox.margin>
+         </PieChart>
+         <PieChart fx:id="ratioPieChart" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: #fd6565;" stylesheets="@../../../../stylesheet/style4.css" title="Patients Ratio (Age Group)" HBox.hgrow="ALWAYS">
+            <HBox.margin>
+               <Insets />
+            </HBox.margin>
+         </PieChart>
+      </HBox>
+      <Button fx:id="yearlyBTN" mnemonicParsing="false" onAction="#callAllTime" text="ALL TIME" StackPane.alignment="BOTTOM_LEFT">
+         <StackPane.margin>
+            <Insets bottom="10.0" left="20.0" />
+         </StackPane.margin>
+      </Button>
+      <Button fx:id="monthlyBTN" layoutX="30.0" layoutY="537.0" mnemonicParsing="false" onAction="#callYearly" text="YEAR" StackPane.alignment="BOTTOM_LEFT">
+         <StackPane.margin>
+            <Insets bottom="10.0" left="115.0" />
+         </StackPane.margin>
+      </Button>
+      <Button fx:id="weaklyBTN" layoutX="105.0" layoutY="537.0" mnemonicParsing="false" onAction="#callMonthly" text="MONTH" StackPane.alignment="BOTTOM_LEFT">
+         <StackPane.margin>
+            <Insets bottom="10.0" left="185.0" />
+         </StackPane.margin>
+      </Button>
+      <StackPane maxHeight="180.0" prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: #4D4D4DFF;" StackPane.alignment="TOP_CENTER">
          <StackPane.margin>
             <Insets left="20.0" right="20.0" top="20.0" />
          </StackPane.margin>
-         <HBox maxHeight="140.0" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="140.0" prefWidth="760.0" spacing="20.0" style="-fx-background-color: #16ff9e;">
+         <HBox maxHeight="140.0" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="140.0" prefWidth="760.0" spacing="20.0" style="-fx-background-color: #4D4D4DFF;">
             <padding>
                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
             </padding>
             <StackPane.margin>
                <Insets top="40.0" />
             </StackPane.margin>
-            <AnchorPane maxHeight="150.0" maxWidth="150.0" style="-fx-background-color: #16FF9E;">
+            <AnchorPane maxHeight="150.0" maxWidth="150.0" style="-fx-background-color: #4D4D4DFF;">
                <HBox.margin>
                   <Insets left="-20.0" top="-20.0" />
                </HBox.margin>
@@ -229,46 +262,5 @@
             </StackPane>
          </HBox>
       </StackPane>
-      <HBox maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="200.0" StackPane.alignment="CENTER">
-         <StackPane.margin>
-            <Insets bottom="40.0" left="20.0" right="20.0" top="220.0" />
-         </StackPane.margin>
-         <BarChart fx:id="patientsBarChart" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: #365abf;" stylesheets="@../../../../stylesheet/style4.css" title="Patients Visits" HBox.hgrow="ALWAYS">
-            <xAxis>
-               <CategoryAxis fx:id="barX" side="BOTTOM" tickLabelFill="WHITE" />
-            </xAxis>
-            <yAxis>
-               <NumberAxis fx:id="barY" side="LEFT" tickLabelFill="WHITE" />
-            </yAxis>
-            <HBox.margin>
-               <Insets right="20.0" />
-            </HBox.margin>
-         </BarChart>
-         <PieChart fx:id="genderPieChart" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: #f1e93d;" stylesheets="@../../../../stylesheet/style4.css" title="Patients Ratio (Gender)" HBox.hgrow="ALWAYS">
-            <HBox.margin>
-               <Insets right="20.0" />
-            </HBox.margin>
-         </PieChart>
-         <PieChart fx:id="ratioPieChart" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: #fd6565;" stylesheets="@../../../../stylesheet/style4.css" title="Patients Ratio (Age Group)" HBox.hgrow="ALWAYS">
-            <HBox.margin>
-               <Insets />
-            </HBox.margin>
-         </PieChart>
-      </HBox>
-      <Button fx:id="yearlyBTN" mnemonicParsing="false" onAction="#callAllTime" text="ALL TIME" StackPane.alignment="BOTTOM_LEFT">
-         <StackPane.margin>
-            <Insets bottom="10.0" left="20.0" />
-         </StackPane.margin>
-      </Button>
-      <Button fx:id="monthlyBTN" layoutX="30.0" layoutY="537.0" mnemonicParsing="false" onAction="#callYearly" text="YEAR" StackPane.alignment="BOTTOM_LEFT">
-         <StackPane.margin>
-            <Insets bottom="10.0" left="115.0" />
-         </StackPane.margin>
-      </Button>
-      <Button fx:id="weaklyBTN" layoutX="105.0" layoutY="537.0" mnemonicParsing="false" onAction="#callMonthly" text="MONTH" StackPane.alignment="BOTTOM_LEFT">
-         <StackPane.margin>
-            <Insets bottom="10.0" left="185.0" />
-         </StackPane.margin>
-      </Button>
    </StackPane>
 </StackPane>

@@ -1,24 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.geometry.Rectangle2D?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.Tab?>
-<?import javafx.scene.control.TabPane?>
-<?import javafx.scene.control.Tooltip?>
-<?import javafx.scene.effect.DropShadow?>
-<?import javafx.scene.effect.Glow?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.StackPane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.paint.Color?>
-<?import javafx.scene.text.Font?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
 
-<StackPane fx:id="mainpane" prefHeight="600.0" prefWidth="800.0" stylesheets="@../../../stylesheet/style7_light.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ospitality.client.settingsController">
+<StackPane fx:id="mainpane" prefHeight="600.0" prefWidth="800.0" stylesheets="@../../../stylesheet/style7.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ospitality.client.settingsController">
     <StackPane fx:id="navbarStackPane" maxHeight="40.0" prefHeight="40.0" prefWidth="600.0" stylesheets="@../../../stylesheet/navbar.css" StackPane.alignment="TOP_CENTER">
         <Button fx:id="dashboardBTN" minHeight="25.0" mnemonicParsing="false" onAction="#callDashboard" prefHeight="25.0" prefWidth="81.0" text="DashBoard" StackPane.alignment="TOP_LEFT">
             <font>
@@ -80,13 +70,13 @@
 </tooltip>
         </Button>
     </StackPane>
-    <TabPane fx:id="tabPane" prefHeight="500.0" prefWidth="720.0" stylesheets="@../../../stylesheet/style_light.css" tabClosingPolicy="UNAVAILABLE" StackPane.alignment="CENTER">
+    <TabPane fx:id="tabPane" prefHeight="500.0" prefWidth="720.0" stylesheets="@../../../stylesheet/style.css" tabClosingPolicy="UNAVAILABLE" StackPane.alignment="CENTER">
         <StackPane.margin>
             <Insets bottom="50.0" left="40.0" right="40.0" top="90.0" />
         </StackPane.margin>
         <Tab text="personal details">
             <StackPane style="-fx-background-color: white;">
-                <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="377.0" prefWidth="760.0" spacing="20.0" style="-fx-background-color: #CDC9C9;">
+                <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="377.0" prefWidth="760.0" spacing="20.0" style="-fx-background-color: #4D4D4DFF;">
                     <padding>
                         <Insets bottom="20.0" top="10.0" />
                     </padding>

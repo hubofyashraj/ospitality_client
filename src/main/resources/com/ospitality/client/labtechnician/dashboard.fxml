@@ -1,23 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.Tab?>
-<?import javafx.scene.control.TabPane?>
-<?import javafx.scene.control.Tooltip?>
-<?import javafx.scene.effect.DropShadow?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.StackPane?>
-<?import javafx.scene.layout.TilePane?>
-<?import javafx.scene.paint.Color?>
-<?import javafx.scene.text.Font?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
 
-<StackPane fx:id="mainpane" prefHeight="600.0" prefWidth="800.0" stylesheets="@../../../../stylesheet/style7_light.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ospitality.client.labtechnician.dashboardController">
+<StackPane fx:id="mainpane" prefHeight="600.0" prefWidth="800.0" stylesheets="@../../../../stylesheet/style7.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ospitality.client.labtechnician.dashboardController">
    <StackPane fx:id="navbarStackPane" maxHeight="42.0" prefHeight="42.0" prefWidth="600.0" style="-fx-border-color: #777777; -fx-border-width: 0 0 1 0;" stylesheets="@../../../../stylesheet/navbar.css" StackPane.alignment="TOP_CENTER">
       <Button fx:id="dashboardBTN" disable="true" minHeight="25.0" mnemonicParsing="false" onAction="#callDashboard" style="-fx-border-color: #a1a1a1; -fx-border-width: 0 0 1 0;" text="DashBoard" textFill="WHITE" StackPane.alignment="TOP_LEFT">
          <font>
@@ -86,18 +77,18 @@
       <StackPane.margin>
          <Insets top="42.0" />
       </StackPane.margin>
-      <StackPane maxHeight="180.0" prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: #16ff9e;" StackPane.alignment="TOP_CENTER">
+      <StackPane maxHeight="180.0" prefHeight="150.0" prefWidth="200.0" StackPane.alignment="TOP_CENTER">
          <StackPane.margin>
             <Insets top="20.0" />
          </StackPane.margin>
-         <HBox maxHeight="140.0" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="140.0" prefWidth="760.0" spacing="20.0" style="-fx-background-color: #16ff9e;">
+         <HBox maxHeight="140.0" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="140.0" prefWidth="760.0" spacing="20.0">
             <padding>
                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
             </padding>
             <StackPane.margin>
                <Insets top="40.0" />
             </StackPane.margin>
-            <AnchorPane maxHeight="150.0" maxWidth="150.0" style="-fx-background-color: #16ff9e;">
+            <AnchorPane maxHeight="150.0" maxWidth="150.0">
                <HBox.margin>
                   <Insets left="-20.0" top="-20.0" />
                </HBox.margin>
@@ -219,7 +210,7 @@
             </DropShadow>
          </effect>
       </StackPane>
-      <TabPane fx:id="tabPane" prefHeight="200.0" prefWidth="200.0" stylesheets="@../../../../stylesheet/style_light.css" tabClosingPolicy="UNAVAILABLE">
+      <TabPane fx:id="tabPane" prefHeight="200.0" prefWidth="200.0" stylesheets="@../../../../stylesheet/style.css" tabClosingPolicy="UNAVAILABLE">
          <tabs>
             <Tab closable="false" text="Today Remaining">
                <content>

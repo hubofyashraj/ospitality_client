@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<StackPane fx:id="mainpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@../../../../stylesheet/style7_light.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ospitality.client.doctor.prescriptionController">
+<StackPane fx:id="mainpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@../../../../stylesheet/style3.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ospitality.client.doctor.prescriptionController">
    <SplitPane dividerPositions="0.29797979797979796" prefHeight="160.0" prefWidth="200.0">
       <StackPane fx:id="pane" prefHeight="398.0" prefWidth="370.0">
          <Button fx:id="backBTN" mnemonicParsing="false" onAction="#callBack" prefWidth="100.0" text="Back" StackPane.alignment="TOP_LEFT">
